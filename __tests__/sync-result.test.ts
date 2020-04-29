@@ -68,4 +68,17 @@ describe('Sync Result tests', () => {
     const r2 = failure(new Error('failure'))
     expect(r2.success).toBeFalsy()
   })
+
+  test('Typeguard for Result.unwrap() should be ok', () => {
+    const [ok, err] = success({ value: 1 }).unwrap()
+
+    if (err) {
+      fail(err)
+    }
+
+    // Typescript should detect that `ok` can not be undefined here since
+    // fail() has return type `never`. So if `err` is defined we this should
+    // be unreachable
+    expect(ok.value).toEqual(1)
+  })
 })
