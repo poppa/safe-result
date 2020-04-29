@@ -26,10 +26,10 @@
   },
   "scripts": {
     "bootstrap": "yarn install --pure-lockfile",
-    "dev": "NODE_ENV=development tsc -w",
-    "build": "NODE_ENV=production tsc && yarn lint && yarn test",
-    "clean": "rimraf dist",
-    "clean:all": "rimraf dist && rimraf node_modules",
+    "dev": "tsc -w",
+    "build": "yarn clean && tsc && yarn lint && yarn test",
+    "clean": "rimraf lib",
+    "clean:all": "rimraf lib && rimraf node_modules",
     "test": "./node_modules/.bin/jest",
     "lint": "yarn eslint src/**/*.ts --quiet"
   },
@@ -37,5 +37,9 @@
     "hooks": {
       "pre-commit": "yarn lint && pretty-quick --staged"
     }
-  }
+  },
+  "files": [
+    "src",
+    "lib"
+  ]
 }
