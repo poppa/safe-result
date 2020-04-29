@@ -5,13 +5,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2-1] - 2020-04-29
+
 ### Changed
 
 - Renamed the `truthy` and `falsy` properties to `success` and `failure` in
   `SuccessResult` and `FailureResult`
 - Removed the `yes` and `no` properites in `SuccessResult` and `FailureResult`
-
-<!-- ## [0.0.2-1] - 2020-04-29 -->
 
 ## [0.0.2-0] - 2020-04-29
 
