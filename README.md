@@ -18,7 +18,7 @@ function unsafeMethod(): Result<{ name: string; age: number }> {
 // Method one
 const r1 = unsafeMethod()
 
-if (r1.truthy) {
+if (r1.success) {
   console.log('Got OK result', r1.result) // {name: 'Some string', age: x}
 } else {
   console.log('Got failed result:', r1.result) // Error('some error')
