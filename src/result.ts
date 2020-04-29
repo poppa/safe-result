@@ -1,8 +1,11 @@
+import { ResultTuple } from './types'
+import { isPromise, isError } from './internal'
+import { isResult } from './helpers'
+
 export type Result<T = unknown, E = Error> = SuccessResult<T> | FailureResult<E>
 export type AsyncResult<T = unknown, E = Error> = Promise<Result<T, E>>
-export type ResultTuple<T = unknown, E = unknown> = [T, E]
 
-interface ResultType {
+export interface ResultType {
   readonly result: unknown
   unwrap(): ResultTuple<unknown, unknown>
   success: boolean
@@ -49,27 +52,12 @@ export class FailureResult<E = Error> implements ResultType {
   }
 }
 
-export function isResult(o: unknown): o is Result {
-  return (
-    typeof o === 'object' &&
-    (o instanceof SuccessResult || o instanceof FailureResult)
-  )
-}
-
 export function success<T>(result: T): SuccessResult<T> {
   return new SuccessResult(result)
 }
 
 export function failure<E = Error>(error: E): FailureResult<E> {
   return new FailureResult(error)
-}
-
-function isPromise(o: unknown): o is Promise<unknown> {
-  return typeof o === 'object' && o !== null && 'then' in o
-}
-
-function isError(e: unknown): e is Error {
-  return typeof e === 'object' && e instanceof Error
 }
 
 export async function all<T extends unknown[]>(
