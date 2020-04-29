@@ -1,0 +1,4 @@
+*.d.ts
+lib
+dist
+node_modules
