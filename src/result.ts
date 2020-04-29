@@ -5,10 +5,8 @@ export type ResultTuple<T = unknown, E = unknown> = [T, E]
 interface ResultType {
   readonly result: unknown
   unwrap(): ResultTuple<unknown, unknown>
-  yes: unknown
-  no: unknown
-  truthy: boolean
-  falsy: boolean
+  success: boolean
+  failure: boolean
 }
 
 export class SuccessResult<T = unknown> implements ResultType {
@@ -22,19 +20,11 @@ export class SuccessResult<T = unknown> implements ResultType {
     return [this.result, undefined]
   }
 
-  public get yes(): T {
-    return this.result
-  }
-
-  public get no(): false {
-    return false
-  }
-
-  public get truthy(): true {
+  public get success(): true {
     return true
   }
 
-  public get falsy(): false {
+  public get failure(): false {
     return false
   }
 }
@@ -50,19 +40,11 @@ export class FailureResult<E = Error> implements ResultType {
     return [undefined, this.result]
   }
 
-  public get yes(): false {
+  public get success(): false {
     return false
   }
 
-  public get no(): E {
-    return this.result
-  }
-
-  public get truthy(): false {
-    return false
-  }
-
-  public get falsy(): true {
+  public get failure(): true {
     return true
   }
 }
@@ -102,7 +84,7 @@ export async function all<T extends unknown[]>(
       })
     } else {
       if (isResult(r)) {
-        return r.truthy ? Promise.resolve(r) : Promise.reject(r)
+        return r.success ? Promise.resolve(r) : Promise.reject(r)
       } else {
         return isError(r)
           ? Promise.reject(failure(r))

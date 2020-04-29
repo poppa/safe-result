@@ -25,47 +25,47 @@ describe('Sync Result tests', () => {
     expect(r).toBeUndefined()
   })
 
-  test('success().truthy should be true', () => {
+  test('success().success should be true', () => {
     const r1 = success(0)
-    expect(r1.truthy).toBeTruthy()
+    expect(r1.success).toBeTruthy()
 
     const r2 = success(false)
-    expect(r2.truthy).toBeTruthy()
+    expect(r2.success).toBeTruthy()
 
     const r3 = success('')
-    expect(r3.truthy).toBeTruthy()
+    expect(r3.success).toBeTruthy()
 
     const r4 = success([])
-    expect(r4.truthy).toBeTruthy()
+    expect(r4.success).toBeTruthy()
   })
 
-  test('success().falsy should be false', () => {
+  test('success().failure should be false', () => {
     const r1 = success(0)
-    expect(r1.falsy).toBeFalsy()
+    expect(r1.failure).toBeFalsy()
 
     const r2 = success(false)
-    expect(r2.falsy).toBeFalsy()
+    expect(r2.failure).toBeFalsy()
 
     const r3 = success('')
-    expect(r3.falsy).toBeFalsy()
+    expect(r3.failure).toBeFalsy()
 
     const r4 = success([])
-    expect(r4.falsy).toBeFalsy()
+    expect(r4.failure).toBeFalsy()
   })
 
-  test('failure().falsy should be true', () => {
+  test('failure().failure should be true', () => {
     const r1 = failure(false)
-    expect(r1.falsy).toBeTruthy()
+    expect(r1.failure).toBeTruthy()
 
     const r2 = failure(new Error('failure'))
-    expect(r2.falsy).toBeTruthy()
+    expect(r2.failure).toBeTruthy()
   })
 
-  test('failure().truthy should be false', () => {
+  test('failure().success should be false', () => {
     const r1 = failure(false)
-    expect(r1.truthy).toBeFalsy()
+    expect(r1.success).toBeFalsy()
 
     const r2 = failure(new Error('failure'))
-    expect(r2.truthy).toBeFalsy()
+    expect(r2.success).toBeFalsy()
   })
 })
