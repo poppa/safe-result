@@ -4,9 +4,9 @@ export {
   success,
   failure,
   all,
-  isResult,
   AsyncResult,
   FailureResult,
   Result,
   SuccessResult,
 } from './result'
+export { isFailure, isResult, isSuccess } from './helpers'

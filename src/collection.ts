@@ -7,7 +7,7 @@ import {
   FailureResult,
 } from './result'
 import { isPromise, isError } from './internal'
-import { isResult, isFailure } from './helpers'
+import { isResult, isFailure, isSuccess } from './helpers'
 
 export abstract class Collection<R extends Result[] = Result[]> {
   protected _result: R
@@ -26,6 +26,18 @@ export abstract class Collection<R extends Result[] = Result[]> {
   public unwrap(): unknown[] {
     return this._result.map((x) => x.result)
   }
+
+  public unwrapAll(): unknown[][] {
+    return this._result.map((r) => r.unwrap())
+  }
+
+  public get successes(): SuccessResult[] {
+    return this._result.filter(isSuccess)
+  }
+
+  public get failures(): FailureResult[] {
+    return this._result.filter(isFailure)
+  }
 }
 
 export class SuccessCollection<R extends SuccessResult[]> extends Collection<
@@ -33,6 +45,14 @@ export class SuccessCollection<R extends SuccessResult[]> extends Collection<
 > {
   public readonly success = true
   public readonly failure = false
+
+  public get successes(): SuccessResult[] {
+    return this._result
+  }
+
+  public get failures(): [] {
+    return []
+  }
 }
 
 export class FailureCollection<R extends FailureResult[]> extends Collection<
@@ -40,6 +60,14 @@ export class FailureCollection<R extends FailureResult[]> extends Collection<
 > {
   public readonly success = false
   public readonly failure = true
+
+  public get successes(): [] {
+    return []
+  }
+
+  public get failures(): FailureResult[] {
+    return this._result
+  }
 }
 
 export async function all<T extends unknown[]>(res: T): Promise<Collection> {
@@ -67,6 +95,4 @@ export async function all<T extends unknown[]>(res: T): Promise<Collection> {
   } catch (e) {
     return new FailureCollection([isFailure(e) ? e : failure(e)])
   }
-
-  // return Promise.all(guard)
 }
