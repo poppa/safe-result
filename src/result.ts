@@ -1,15 +1,37 @@
 import { ResultTuple } from './types'
-
+/**
+ * A result that is either a [[`SuccessResult`]] or [[`FailureResult`]]
+ * @typeParam T - Type of successful result
+ * @typeParam E - Type of error result
+ */
 export type Result<T = unknown, E = Error> = SuccessResult<T> | FailureResult<E>
+/**
+ * Alias for `Promise`<[[`Result`]]`<T, E>>`
+ * @typeParam T - Type of successful result
+ * @typeParam E - Type of error result
+ */
 export type AsyncResult<T = unknown, E = Error> = Promise<Result<T, E>>
 
+/**
+ * Result interface
+ */
 export interface ResultType {
+  /** The value */
   readonly result: unknown
+  /**
+   * Returns a tuple with either `[successResult, undefined]` or
+   * `[undefined, errorResult]`.
+   */
   unwrap(): ResultTuple<unknown, unknown>
+  /** Returns `true` if a success result, `false` otherwise` */
   success: boolean
+  /** Returns `true` if an error result, `false` otherwise */
   failure: boolean
 }
 
+/**
+ * A class representing a successful result
+ */
 export class SuccessResult<T = unknown> implements ResultType {
   public readonly result: T
 
@@ -30,6 +52,9 @@ export class SuccessResult<T = unknown> implements ResultType {
   }
 }
 
+/**
+ * A class representing an error result
+ */
 export class FailureResult<E = Error> implements ResultType {
   public readonly result: E
 
@@ -50,10 +75,18 @@ export class FailureResult<E = Error> implements ResultType {
   }
 }
 
+/**
+ * Utility function for creating a [[SuccessResult]] instance
+ * @param result
+ */
 export function success<T>(result: T): SuccessResult<T> {
   return new SuccessResult(result)
 }
 
+/**
+ * Utility function for creating a [[FailureResult]] instance
+ * @param error
+ */
 export function failure<E = Error>(error: E): FailureResult<E> {
   return new FailureResult(error)
 }

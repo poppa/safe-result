@@ -1,0 +1,1409 @@
+{
+  "kinds": {
+    "1": "Module",
+    "64": "Function",
+    "128": "Class",
+    "256": "Interface",
+    "512": "Constructor",
+    "1024": "Property",
+    "2048": "Method",
+    "262144": "Accessor",
+    "4194304": "Type alias",
+    "16777216": "Reference"
+  },
+  "rows": [
+    {
+      "id": 0,
+      "kind": 1,
+      "name": "\"types\"",
+      "url": "modules/_types_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 1,
+      "kind": 4194304,
+      "name": "ResultTuple",
+      "url": "modules/_types_.html#resulttuple",
+      "classes": "tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"types\""
+    },
+    {
+      "id": 2,
+      "kind": 1,
+      "name": "\"result\"",
+      "url": "modules/_result_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 3,
+      "kind": 256,
+      "name": "ResultType",
+      "url": "interfaces/_result_.resulttype.html",
+      "classes": "tsd-kind-interface tsd-parent-kind-module",
+      "parent": "\"result\""
+    },
+    {
+      "id": 4,
+      "kind": 1024,
+      "name": "result",
+      "url": "interfaces/_result_.resulttype.html#result",
+      "classes": "tsd-kind-property tsd-parent-kind-interface",
+      "parent": "\"result\".ResultType"
+    },
+    {
+      "id": 5,
+      "kind": 2048,
+      "name": "unwrap",
+      "url": "interfaces/_result_.resulttype.html#unwrap",
+      "classes": "tsd-kind-method tsd-parent-kind-interface",
+      "parent": "\"result\".ResultType"
+    },
+    {
+      "id": 6,
+      "kind": 1024,
+      "name": "success",
+      "url": "interfaces/_result_.resulttype.html#success",
+      "classes": "tsd-kind-property tsd-parent-kind-interface",
+      "parent": "\"result\".ResultType"
+    },
+    {
+      "id": 7,
+      "kind": 1024,
+      "name": "failure",
+      "url": "interfaces/_result_.resulttype.html#failure",
+      "classes": "tsd-kind-property tsd-parent-kind-interface",
+      "parent": "\"result\".ResultType"
+    },
+    {
+      "id": 8,
+      "kind": 128,
+      "name": "SuccessResult",
+      "url": "classes/_result_.successresult.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"result\""
+    },
+    {
+      "id": 9,
+      "kind": 1024,
+      "name": "result",
+      "url": "classes/_result_.successresult.html#result",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"result\".SuccessResult"
+    },
+    {
+      "id": 10,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_result_.successresult.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class",
+      "parent": "\"result\".SuccessResult"
+    },
+    {
+      "id": 11,
+      "kind": 2048,
+      "name": "unwrap",
+      "url": "classes/_result_.successresult.html#unwrap",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"result\".SuccessResult"
+    },
+    {
+      "id": 12,
+      "kind": 262144,
+      "name": "success",
+      "url": "classes/_result_.successresult.html#success",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class",
+      "parent": "\"result\".SuccessResult"
+    },
+    {
+      "id": 13,
+      "kind": 262144,
+      "name": "failure",
+      "url": "classes/_result_.successresult.html#failure",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class",
+      "parent": "\"result\".SuccessResult"
+    },
+    {
+      "id": 14,
+      "kind": 128,
+      "name": "FailureResult",
+      "url": "classes/_result_.failureresult.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"result\""
+    },
+    {
+      "id": 15,
+      "kind": 1024,
+      "name": "result",
+      "url": "classes/_result_.failureresult.html#result",
+      "classes": "tsd-kind-property tsd-parent-kind-class",
+      "parent": "\"result\".FailureResult"
+    },
+    {
+      "id": 16,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_result_.failureresult.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class",
+      "parent": "\"result\".FailureResult"
+    },
+    {
+      "id": 17,
+      "kind": 2048,
+      "name": "unwrap",
+      "url": "classes/_result_.failureresult.html#unwrap",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"result\".FailureResult"
+    },
+    {
+      "id": 18,
+      "kind": 262144,
+      "name": "success",
+      "url": "classes/_result_.failureresult.html#success",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class",
+      "parent": "\"result\".FailureResult"
+    },
+    {
+      "id": 19,
+      "kind": 262144,
+      "name": "failure",
+      "url": "classes/_result_.failureresult.html#failure",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class",
+      "parent": "\"result\".FailureResult"
+    },
+    {
+      "id": 20,
+      "kind": 4194304,
+      "name": "Result",
+      "url": "modules/_result_.html#result",
+      "classes": "tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"result\""
+    },
+    {
+      "id": 21,
+      "kind": 4194304,
+      "name": "AsyncResult",
+      "url": "modules/_result_.html#asyncresult",
+      "classes": "tsd-kind-type-alias tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"result\""
+    },
+    {
+      "id": 22,
+      "kind": 64,
+      "name": "success",
+      "url": "modules/_result_.html#success",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"result\""
+    },
+    {
+      "id": 23,
+      "kind": 64,
+      "name": "failure",
+      "url": "modules/_result_.html#failure",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"result\""
+    },
+    {
+      "id": 24,
+      "kind": 1,
+      "name": "\"typeguards\"",
+      "url": "modules/_typeguards_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 25,
+      "kind": 64,
+      "name": "isResult",
+      "url": "modules/_typeguards_.html#isresult",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"typeguards\""
+    },
+    {
+      "id": 26,
+      "kind": 64,
+      "name": "isSuccess",
+      "url": "modules/_typeguards_.html#issuccess",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"typeguards\""
+    },
+    {
+      "id": 27,
+      "kind": 64,
+      "name": "isFailure",
+      "url": "modules/_typeguards_.html#isfailure",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"typeguards\""
+    },
+    {
+      "id": 28,
+      "kind": 64,
+      "name": "isCollection",
+      "url": "modules/_typeguards_.html#iscollection",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"typeguards\""
+    },
+    {
+      "id": 29,
+      "kind": 64,
+      "name": "isSuccessCollection",
+      "url": "modules/_typeguards_.html#issuccesscollection",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"typeguards\""
+    },
+    {
+      "id": 30,
+      "kind": 64,
+      "name": "isFailureCollection",
+      "url": "modules/_typeguards_.html#isfailurecollection",
+      "classes": "tsd-kind-function tsd-parent-kind-module",
+      "parent": "\"typeguards\""
+    },
+    {
+      "id": 31,
+      "kind": 1,
+      "name": "\"collection\"",
+      "url": "modules/_collection_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 32,
+      "kind": 128,
+      "name": "Collection",
+      "url": "classes/_collection_.collection.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"collection\""
+    },
+    {
+      "id": 33,
+      "kind": 1024,
+      "name": "_result",
+      "url": "classes/_collection_.collection.html#_result",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-protected",
+      "parent": "\"collection\".Collection"
+    },
+    {
+      "id": 34,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_collection_.collection.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class",
+      "parent": "\"collection\".Collection"
+    },
+    {
+      "id": 35,
+      "kind": 262144,
+      "name": "result",
+      "url": "classes/_collection_.collection.html#result",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class",
+      "parent": "\"collection\".Collection"
+    },
+    {
+      "id": 36,
+      "kind": 2048,
+      "name": "unwrap",
+      "url": "classes/_collection_.collection.html#unwrap",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"collection\".Collection"
+    },
+    {
+      "id": 37,
+      "kind": 2048,
+      "name": "unwrapAll",
+      "url": "classes/_collection_.collection.html#unwrapall",
+      "classes": "tsd-kind-method tsd-parent-kind-class",
+      "parent": "\"collection\".Collection"
+    },
+    {
+      "id": 38,
+      "kind": 262144,
+      "name": "success",
+      "url": "classes/_collection_.collection.html#success",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class",
+      "parent": "\"collection\".Collection"
+    },
+    {
+      "id": 39,
+      "kind": 262144,
+      "name": "failure",
+      "url": "classes/_collection_.collection.html#failure",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class",
+      "parent": "\"collection\".Collection"
+    },
+    {
+      "id": 40,
+      "kind": 262144,
+      "name": "successes",
+      "url": "classes/_collection_.collection.html#successes",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class",
+      "parent": "\"collection\".Collection"
+    },
+    {
+      "id": 41,
+      "kind": 262144,
+      "name": "failures",
+      "url": "classes/_collection_.collection.html#failures",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class",
+      "parent": "\"collection\".Collection"
+    },
+    {
+      "id": 42,
+      "kind": 128,
+      "name": "SuccessCollection",
+      "url": "classes/_collection_.successcollection.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"collection\""
+    },
+    {
+      "id": 43,
+      "kind": 262144,
+      "name": "success",
+      "url": "classes/_collection_.successcollection.html#success",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"collection\".SuccessCollection"
+    },
+    {
+      "id": 44,
+      "kind": 262144,
+      "name": "failure",
+      "url": "classes/_collection_.successcollection.html#failure",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"collection\".SuccessCollection"
+    },
+    {
+      "id": 45,
+      "kind": 262144,
+      "name": "successes",
+      "url": "classes/_collection_.successcollection.html#successes",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"collection\".SuccessCollection"
+    },
+    {
+      "id": 46,
+      "kind": 262144,
+      "name": "failures",
+      "url": "classes/_collection_.successcollection.html#failures",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"collection\".SuccessCollection"
+    },
+    {
+      "id": 47,
+      "kind": 1024,
+      "name": "_result",
+      "url": "classes/_collection_.successcollection.html#_result",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected",
+      "parent": "\"collection\".SuccessCollection"
+    },
+    {
+      "id": 48,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_collection_.successcollection.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"collection\".SuccessCollection"
+    },
+    {
+      "id": 49,
+      "kind": 262144,
+      "name": "result",
+      "url": "classes/_collection_.successcollection.html#result",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"collection\".SuccessCollection"
+    },
+    {
+      "id": 50,
+      "kind": 2048,
+      "name": "unwrap",
+      "url": "classes/_collection_.successcollection.html#unwrap",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"collection\".SuccessCollection"
+    },
+    {
+      "id": 51,
+      "kind": 2048,
+      "name": "unwrapAll",
+      "url": "classes/_collection_.successcollection.html#unwrapall",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"collection\".SuccessCollection"
+    },
+    {
+      "id": 52,
+      "kind": 128,
+      "name": "FailureCollection",
+      "url": "classes/_collection_.failurecollection.html",
+      "classes": "tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"collection\""
+    },
+    {
+      "id": 53,
+      "kind": 262144,
+      "name": "success",
+      "url": "classes/_collection_.failurecollection.html#success",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"collection\".FailureCollection"
+    },
+    {
+      "id": 54,
+      "kind": 262144,
+      "name": "failure",
+      "url": "classes/_collection_.failurecollection.html#failure",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"collection\".FailureCollection"
+    },
+    {
+      "id": 55,
+      "kind": 262144,
+      "name": "successes",
+      "url": "classes/_collection_.failurecollection.html#successes",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"collection\".FailureCollection"
+    },
+    {
+      "id": 56,
+      "kind": 262144,
+      "name": "failures",
+      "url": "classes/_collection_.failurecollection.html#failures",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite",
+      "parent": "\"collection\".FailureCollection"
+    },
+    {
+      "id": 57,
+      "kind": 1024,
+      "name": "_result",
+      "url": "classes/_collection_.failurecollection.html#_result",
+      "classes": "tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected",
+      "parent": "\"collection\".FailureCollection"
+    },
+    {
+      "id": 58,
+      "kind": 512,
+      "name": "constructor",
+      "url": "classes/_collection_.failurecollection.html#constructor",
+      "classes": "tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"collection\".FailureCollection"
+    },
+    {
+      "id": 59,
+      "kind": 262144,
+      "name": "result",
+      "url": "classes/_collection_.failurecollection.html#result",
+      "classes": "tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"collection\".FailureCollection"
+    },
+    {
+      "id": 60,
+      "kind": 2048,
+      "name": "unwrap",
+      "url": "classes/_collection_.failurecollection.html#unwrap",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"collection\".FailureCollection"
+    },
+    {
+      "id": 61,
+      "kind": 2048,
+      "name": "unwrapAll",
+      "url": "classes/_collection_.failurecollection.html#unwrapall",
+      "classes": "tsd-kind-method tsd-parent-kind-class tsd-is-inherited",
+      "parent": "\"collection\".FailureCollection"
+    },
+    {
+      "id": 62,
+      "kind": 64,
+      "name": "toSuccess",
+      "url": "modules/_collection_.html#tosuccess",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported",
+      "parent": "\"collection\""
+    },
+    {
+      "id": 63,
+      "kind": 64,
+      "name": "toFailure",
+      "url": "modules/_collection_.html#tofailure",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported",
+      "parent": "\"collection\""
+    },
+    {
+      "id": 64,
+      "kind": 64,
+      "name": "guard",
+      "url": "modules/_collection_.html#guard",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported",
+      "parent": "\"collection\""
+    },
+    {
+      "id": 65,
+      "kind": 64,
+      "name": "allSetteled",
+      "url": "modules/_collection_.html#allsetteled",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"collection\""
+    },
+    {
+      "id": 66,
+      "kind": 64,
+      "name": "all",
+      "url": "modules/_collection_.html#all",
+      "classes": "tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter",
+      "parent": "\"collection\""
+    },
+    {
+      "id": 67,
+      "kind": 1,
+      "name": "\"lib\"",
+      "url": "modules/_lib_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 68,
+      "kind": 16777216,
+      "name": "ResultTuple",
+      "url": "modules/_lib_.html#resulttuple",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 69,
+      "kind": 16777216,
+      "name": "isResult",
+      "url": "modules/_lib_.html#isresult",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 70,
+      "kind": 16777216,
+      "name": "isSuccess",
+      "url": "modules/_lib_.html#issuccess",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 71,
+      "kind": 16777216,
+      "name": "isFailure",
+      "url": "modules/_lib_.html#isfailure",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 72,
+      "kind": 16777216,
+      "name": "isCollection",
+      "url": "modules/_lib_.html#iscollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 73,
+      "kind": 16777216,
+      "name": "isSuccessCollection",
+      "url": "modules/_lib_.html#issuccesscollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 74,
+      "kind": 16777216,
+      "name": "isFailureCollection",
+      "url": "modules/_lib_.html#isfailurecollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 75,
+      "kind": 16777216,
+      "name": "AsyncResult",
+      "url": "modules/_lib_.html#asyncresult",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 76,
+      "kind": 16777216,
+      "name": "FailureResult",
+      "url": "modules/_lib_.html#failureresult",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 77,
+      "kind": 16777216,
+      "name": "SuccessResult",
+      "url": "modules/_lib_.html#successresult",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 78,
+      "kind": 16777216,
+      "name": "Result",
+      "url": "modules/_lib_.html#result",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 79,
+      "kind": 16777216,
+      "name": "failure",
+      "url": "modules/_lib_.html#failure",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 80,
+      "kind": 16777216,
+      "name": "success",
+      "url": "modules/_lib_.html#success",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 81,
+      "kind": 16777216,
+      "name": "Collection",
+      "url": "modules/_lib_.html#collection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 82,
+      "kind": 16777216,
+      "name": "SuccessCollection",
+      "url": "modules/_lib_.html#successcollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 83,
+      "kind": 16777216,
+      "name": "FailureCollection",
+      "url": "modules/_lib_.html#failurecollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 84,
+      "kind": 16777216,
+      "name": "all",
+      "url": "modules/_lib_.html#all",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 85,
+      "kind": 16777216,
+      "name": "allSetteled",
+      "url": "modules/_lib_.html#allsetteled",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"lib\""
+    },
+    {
+      "id": 86,
+      "kind": 1,
+      "name": "\"index\"",
+      "url": "modules/_index_.html",
+      "classes": "tsd-kind-module"
+    },
+    {
+      "id": 87,
+      "kind": 16777216,
+      "name": "AsyncResult",
+      "url": "modules/_index_.html#asyncresult",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 88,
+      "kind": 16777216,
+      "name": "FailureResult",
+      "url": "modules/_index_.html#failureresult",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 89,
+      "kind": 16777216,
+      "name": "SuccessResult",
+      "url": "modules/_index_.html#successresult",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 90,
+      "kind": 16777216,
+      "name": "Result",
+      "url": "modules/_index_.html#result",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 91,
+      "kind": 16777216,
+      "name": "failure",
+      "url": "modules/_index_.html#failure",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 92,
+      "kind": 16777216,
+      "name": "success",
+      "url": "modules/_index_.html#success",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 93,
+      "kind": 16777216,
+      "name": "Collection",
+      "url": "modules/_index_.html#collection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 94,
+      "kind": 16777216,
+      "name": "SuccessCollection",
+      "url": "modules/_index_.html#successcollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 95,
+      "kind": 16777216,
+      "name": "FailureCollection",
+      "url": "modules/_index_.html#failurecollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 96,
+      "kind": 16777216,
+      "name": "all",
+      "url": "modules/_index_.html#all",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 97,
+      "kind": 16777216,
+      "name": "allSetteled",
+      "url": "modules/_index_.html#allsetteled",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 98,
+      "kind": 16777216,
+      "name": "ResultTuple",
+      "url": "modules/_index_.html#resulttuple",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 99,
+      "kind": 16777216,
+      "name": "isResult",
+      "url": "modules/_index_.html#isresult",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 100,
+      "kind": 16777216,
+      "name": "isSuccess",
+      "url": "modules/_index_.html#issuccess",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 101,
+      "kind": 16777216,
+      "name": "isFailure",
+      "url": "modules/_index_.html#isfailure",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 102,
+      "kind": 16777216,
+      "name": "isCollection",
+      "url": "modules/_index_.html#iscollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 103,
+      "kind": 16777216,
+      "name": "isSuccessCollection",
+      "url": "modules/_index_.html#issuccesscollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    },
+    {
+      "id": 104,
+      "kind": 16777216,
+      "name": "isFailureCollection",
+      "url": "modules/_index_.html#isfailurecollection",
+      "classes": "tsd-kind-reference tsd-parent-kind-module",
+      "parent": "\"index\""
+    }
+  ],
+  "index": {
+    "version": "2.3.8",
+    "fields": ["name", "parent"],
+    "fieldVectors": [
+      ["name/0", [0, 37.471]],
+      ["parent/0", []],
+      ["name/1", [1, 34.107]],
+      ["parent/1", [0, 3.656]],
+      ["name/2", [2, 18.012]],
+      ["parent/2", []],
+      ["name/3", [3, 42.58]],
+      ["parent/3", [2, 1.758]],
+      ["name/4", [2, 18.012]],
+      ["parent/4", [4, 3.083]],
+      ["name/5", [5, 27.916]],
+      ["parent/5", [4, 3.083]],
+      ["name/6", [6, 24.121]],
+      ["parent/6", [4, 3.083]],
+      ["name/7", [7, 24.121]],
+      ["parent/7", [4, 3.083]],
+      ["name/8", [8, 34.107]],
+      ["parent/8", [2, 1.758]],
+      ["name/9", [2, 18.012]],
+      ["parent/9", [9, 2.887]],
+      ["name/10", [10, 29.587]],
+      ["parent/10", [9, 2.887]],
+      ["name/11", [5, 27.916]],
+      ["parent/11", [9, 2.887]],
+      ["name/12", [6, 24.121]],
+      ["parent/12", [9, 2.887]],
+      ["name/13", [7, 24.121]],
+      ["parent/13", [9, 2.887]],
+      ["name/14", [11, 34.107]],
+      ["parent/14", [2, 1.758]],
+      ["name/15", [2, 18.012]],
+      ["parent/15", [12, 2.887]],
+      ["name/16", [10, 29.587]],
+      ["parent/16", [12, 2.887]],
+      ["name/17", [5, 27.916]],
+      ["parent/17", [12, 2.887]],
+      ["name/18", [6, 24.121]],
+      ["parent/18", [12, 2.887]],
+      ["name/19", [7, 24.121]],
+      ["parent/19", [12, 2.887]],
+      ["name/20", [2, 18.012]],
+      ["parent/20", [2, 1.758]],
+      ["name/21", [13, 34.107]],
+      ["parent/21", [2, 1.758]],
+      ["name/22", [6, 24.121]],
+      ["parent/22", [2, 1.758]],
+      ["name/23", [7, 24.121]],
+      ["parent/23", [2, 1.758]],
+      ["name/24", [14, 26.485]],
+      ["parent/24", []],
+      ["name/25", [15, 34.107]],
+      ["parent/25", [14, 2.584]],
+      ["name/26", [16, 34.107]],
+      ["parent/26", [14, 2.584]],
+      ["name/27", [17, 34.107]],
+      ["parent/27", [14, 2.584]],
+      ["name/28", [18, 34.107]],
+      ["parent/28", [14, 2.584]],
+      ["name/29", [19, 34.107]],
+      ["parent/29", [14, 2.584]],
+      ["name/30", [20, 34.107]],
+      ["parent/30", [14, 2.584]],
+      ["name/31", [21, 21.377]],
+      ["parent/31", []],
+      ["name/32", [21, 21.377]],
+      ["parent/32", [21, 2.086]],
+      ["name/33", [22, 34.107]],
+      ["parent/33", [23, 2.354]],
+      ["name/34", [10, 29.587]],
+      ["parent/34", [23, 2.354]],
+      ["name/35", [2, 18.012]],
+      ["parent/35", [23, 2.354]],
+      ["name/36", [5, 27.916]],
+      ["parent/36", [23, 2.354]],
+      ["name/37", [24, 34.107]],
+      ["parent/37", [23, 2.354]],
+      ["name/38", [6, 24.121]],
+      ["parent/38", [23, 2.354]],
+      ["name/39", [7, 24.121]],
+      ["parent/39", [23, 2.354]],
+      ["name/40", [25, 34.107]],
+      ["parent/40", [23, 2.354]],
+      ["name/41", [26, 34.107]],
+      ["parent/41", [23, 2.354]],
+      ["name/42", [27, 34.107]],
+      ["parent/42", [21, 2.086]],
+      ["name/43", [6, 24.121]],
+      ["parent/43", [28, 2.354]],
+      ["name/44", [7, 24.121]],
+      ["parent/44", [28, 2.354]],
+      ["name/45", [25, 34.107]],
+      ["parent/45", [28, 2.354]],
+      ["name/46", [26, 34.107]],
+      ["parent/46", [28, 2.354]],
+      ["name/47", [22, 34.107]],
+      ["parent/47", [28, 2.354]],
+      ["name/48", [10, 29.587]],
+      ["parent/48", [28, 2.354]],
+      ["name/49", [2, 18.012]],
+      ["parent/49", [28, 2.354]],
+      ["name/50", [5, 27.916]],
+      ["parent/50", [28, 2.354]],
+      ["name/51", [24, 34.107]],
+      ["parent/51", [28, 2.354]],
+      ["name/52", [29, 34.107]],
+      ["parent/52", [21, 2.086]],
+      ["name/53", [6, 24.121]],
+      ["parent/53", [30, 2.354]],
+      ["name/54", [7, 24.121]],
+      ["parent/54", [30, 2.354]],
+      ["name/55", [25, 34.107]],
+      ["parent/55", [30, 2.354]],
+      ["name/56", [26, 34.107]],
+      ["parent/56", [30, 2.354]],
+      ["name/57", [22, 34.107]],
+      ["parent/57", [30, 2.354]],
+      ["name/58", [10, 29.587]],
+      ["parent/58", [30, 2.354]],
+      ["name/59", [2, 18.012]],
+      ["parent/59", [30, 2.354]],
+      ["name/60", [5, 27.916]],
+      ["parent/60", [30, 2.354]],
+      ["name/61", [24, 34.107]],
+      ["parent/61", [30, 2.354]],
+      ["name/62", [31, 42.58]],
+      ["parent/62", [21, 2.086]],
+      ["name/63", [32, 42.58]],
+      ["parent/63", [21, 2.086]],
+      ["name/64", [33, 42.58]],
+      ["parent/64", [21, 2.086]],
+      ["name/65", [34, 34.107]],
+      ["parent/65", [21, 2.086]],
+      ["name/66", [35, 34.107]],
+      ["parent/66", [21, 2.086]],
+      ["name/67", [36, 16.93]],
+      ["parent/67", []],
+      ["name/68", [1, 34.107]],
+      ["parent/68", [36, 1.652]],
+      ["name/69", [15, 34.107]],
+      ["parent/69", [36, 1.652]],
+      ["name/70", [16, 34.107]],
+      ["parent/70", [36, 1.652]],
+      ["name/71", [17, 34.107]],
+      ["parent/71", [36, 1.652]],
+      ["name/72", [18, 34.107]],
+      ["parent/72", [36, 1.652]],
+      ["name/73", [19, 34.107]],
+      ["parent/73", [36, 1.652]],
+      ["name/74", [20, 34.107]],
+      ["parent/74", [36, 1.652]],
+      ["name/75", [13, 34.107]],
+      ["parent/75", [36, 1.652]],
+      ["name/76", [11, 34.107]],
+      ["parent/76", [36, 1.652]],
+      ["name/77", [8, 34.107]],
+      ["parent/77", [36, 1.652]],
+      ["name/78", [2, 18.012]],
+      ["parent/78", [36, 1.652]],
+      ["name/79", [7, 24.121]],
+      ["parent/79", [36, 1.652]],
+      ["name/80", [6, 24.121]],
+      ["parent/80", [36, 1.652]],
+      ["name/81", [21, 21.377]],
+      ["parent/81", [36, 1.652]],
+      ["name/82", [27, 34.107]],
+      ["parent/82", [36, 1.652]],
+      ["name/83", [29, 34.107]],
+      ["parent/83", [36, 1.652]],
+      ["name/84", [35, 34.107]],
+      ["parent/84", [36, 1.652]],
+      ["name/85", [34, 34.107]],
+      ["parent/85", [36, 1.652]],
+      ["name/86", [37, 16.93]],
+      ["parent/86", []],
+      ["name/87", [13, 34.107]],
+      ["parent/87", [37, 1.652]],
+      ["name/88", [11, 34.107]],
+      ["parent/88", [37, 1.652]],
+      ["name/89", [8, 34.107]],
+      ["parent/89", [37, 1.652]],
+      ["name/90", [2, 18.012]],
+      ["parent/90", [37, 1.652]],
+      ["name/91", [7, 24.121]],
+      ["parent/91", [37, 1.652]],
+      ["name/92", [6, 24.121]],
+      ["parent/92", [37, 1.652]],
+      ["name/93", [21, 21.377]],
+      ["parent/93", [37, 1.652]],
+      ["name/94", [27, 34.107]],
+      ["parent/94", [37, 1.652]],
+      ["name/95", [29, 34.107]],
+      ["parent/95", [37, 1.652]],
+      ["name/96", [35, 34.107]],
+      ["parent/96", [37, 1.652]],
+      ["name/97", [34, 34.107]],
+      ["parent/97", [37, 1.652]],
+      ["name/98", [1, 34.107]],
+      ["parent/98", [37, 1.652]],
+      ["name/99", [15, 34.107]],
+      ["parent/99", [37, 1.652]],
+      ["name/100", [16, 34.107]],
+      ["parent/100", [37, 1.652]],
+      ["name/101", [17, 34.107]],
+      ["parent/101", [37, 1.652]],
+      ["name/102", [18, 34.107]],
+      ["parent/102", [37, 1.652]],
+      ["name/103", [19, 34.107]],
+      ["parent/103", [37, 1.652]],
+      ["name/104", [20, 34.107]],
+      ["parent/104", [37, 1.652]]
+    ],
+    "invertedIndex": [
+      [
+        "_result",
+        { "_index": 22, "name": { "33": {}, "47": {}, "57": {} }, "parent": {} }
+      ],
+      [
+        "all",
+        { "_index": 35, "name": { "66": {}, "84": {}, "96": {} }, "parent": {} }
+      ],
+      [
+        "allsetteled",
+        { "_index": 34, "name": { "65": {}, "85": {}, "97": {} }, "parent": {} }
+      ],
+      [
+        "asyncresult",
+        { "_index": 13, "name": { "21": {}, "75": {}, "87": {} }, "parent": {} }
+      ],
+      [
+        "collection",
+        {
+          "_index": 21,
+          "name": { "31": {}, "32": {}, "81": {}, "93": {} },
+          "parent": {
+            "32": {},
+            "42": {},
+            "52": {},
+            "62": {},
+            "63": {},
+            "64": {},
+            "65": {},
+            "66": {}
+          }
+        }
+      ],
+      [
+        "collection\".collection",
+        {
+          "_index": 23,
+          "name": {},
+          "parent": {
+            "33": {},
+            "34": {},
+            "35": {},
+            "36": {},
+            "37": {},
+            "38": {},
+            "39": {},
+            "40": {},
+            "41": {}
+          }
+        }
+      ],
+      [
+        "collection\".failurecollection",
+        {
+          "_index": 30,
+          "name": {},
+          "parent": {
+            "53": {},
+            "54": {},
+            "55": {},
+            "56": {},
+            "57": {},
+            "58": {},
+            "59": {},
+            "60": {},
+            "61": {}
+          }
+        }
+      ],
+      [
+        "collection\".successcollection",
+        {
+          "_index": 28,
+          "name": {},
+          "parent": {
+            "43": {},
+            "44": {},
+            "45": {},
+            "46": {},
+            "47": {},
+            "48": {},
+            "49": {},
+            "50": {},
+            "51": {}
+          }
+        }
+      ],
+      [
+        "constructor",
+        {
+          "_index": 10,
+          "name": { "10": {}, "16": {}, "34": {}, "48": {}, "58": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "failure",
+        {
+          "_index": 7,
+          "name": {
+            "7": {},
+            "13": {},
+            "19": {},
+            "23": {},
+            "39": {},
+            "44": {},
+            "54": {},
+            "79": {},
+            "91": {}
+          },
+          "parent": {}
+        }
+      ],
+      [
+        "failurecollection",
+        { "_index": 29, "name": { "52": {}, "83": {}, "95": {} }, "parent": {} }
+      ],
+      [
+        "failureresult",
+        { "_index": 11, "name": { "14": {}, "76": {}, "88": {} }, "parent": {} }
+      ],
+      [
+        "failures",
+        { "_index": 26, "name": { "41": {}, "46": {}, "56": {} }, "parent": {} }
+      ],
+      ["guard", { "_index": 33, "name": { "64": {} }, "parent": {} }],
+      [
+        "index",
+        {
+          "_index": 37,
+          "name": { "86": {} },
+          "parent": {
+            "87": {},
+            "88": {},
+            "89": {},
+            "90": {},
+            "91": {},
+            "92": {},
+            "93": {},
+            "94": {},
+            "95": {},
+            "96": {},
+            "97": {},
+            "98": {},
+            "99": {},
+            "100": {},
+            "101": {},
+            "102": {},
+            "103": {},
+            "104": {}
+          }
+        }
+      ],
+      [
+        "iscollection",
+        {
+          "_index": 18,
+          "name": { "28": {}, "72": {}, "102": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "isfailure",
+        {
+          "_index": 17,
+          "name": { "27": {}, "71": {}, "101": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "isfailurecollection",
+        {
+          "_index": 20,
+          "name": { "30": {}, "74": {}, "104": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "isresult",
+        { "_index": 15, "name": { "25": {}, "69": {}, "99": {} }, "parent": {} }
+      ],
+      [
+        "issuccess",
+        {
+          "_index": 16,
+          "name": { "26": {}, "70": {}, "100": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "issuccesscollection",
+        {
+          "_index": 19,
+          "name": { "29": {}, "73": {}, "103": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "lib",
+        {
+          "_index": 36,
+          "name": { "67": {} },
+          "parent": {
+            "68": {},
+            "69": {},
+            "70": {},
+            "71": {},
+            "72": {},
+            "73": {},
+            "74": {},
+            "75": {},
+            "76": {},
+            "77": {},
+            "78": {},
+            "79": {},
+            "80": {},
+            "81": {},
+            "82": {},
+            "83": {},
+            "84": {},
+            "85": {}
+          }
+        }
+      ],
+      [
+        "result",
+        {
+          "_index": 2,
+          "name": {
+            "2": {},
+            "4": {},
+            "9": {},
+            "15": {},
+            "20": {},
+            "35": {},
+            "49": {},
+            "59": {},
+            "78": {},
+            "90": {}
+          },
+          "parent": {
+            "3": {},
+            "8": {},
+            "14": {},
+            "20": {},
+            "21": {},
+            "22": {},
+            "23": {}
+          }
+        }
+      ],
+      [
+        "result\".failureresult",
+        {
+          "_index": 12,
+          "name": {},
+          "parent": { "15": {}, "16": {}, "17": {}, "18": {}, "19": {} }
+        }
+      ],
+      [
+        "result\".resulttype",
+        {
+          "_index": 4,
+          "name": {},
+          "parent": { "4": {}, "5": {}, "6": {}, "7": {} }
+        }
+      ],
+      [
+        "result\".successresult",
+        {
+          "_index": 9,
+          "name": {},
+          "parent": { "9": {}, "10": {}, "11": {}, "12": {}, "13": {} }
+        }
+      ],
+      [
+        "resulttuple",
+        { "_index": 1, "name": { "1": {}, "68": {}, "98": {} }, "parent": {} }
+      ],
+      ["resulttype", { "_index": 3, "name": { "3": {} }, "parent": {} }],
+      [
+        "success",
+        {
+          "_index": 6,
+          "name": {
+            "6": {},
+            "12": {},
+            "18": {},
+            "22": {},
+            "38": {},
+            "43": {},
+            "53": {},
+            "80": {},
+            "92": {}
+          },
+          "parent": {}
+        }
+      ],
+      [
+        "successcollection",
+        { "_index": 27, "name": { "42": {}, "82": {}, "94": {} }, "parent": {} }
+      ],
+      [
+        "successes",
+        { "_index": 25, "name": { "40": {}, "45": {}, "55": {} }, "parent": {} }
+      ],
+      [
+        "successresult",
+        { "_index": 8, "name": { "8": {}, "77": {}, "89": {} }, "parent": {} }
+      ],
+      ["tofailure", { "_index": 32, "name": { "63": {} }, "parent": {} }],
+      ["tosuccess", { "_index": 31, "name": { "62": {} }, "parent": {} }],
+      [
+        "typeguards",
+        {
+          "_index": 14,
+          "name": { "24": {} },
+          "parent": {
+            "25": {},
+            "26": {},
+            "27": {},
+            "28": {},
+            "29": {},
+            "30": {}
+          }
+        }
+      ],
+      ["types", { "_index": 0, "name": { "0": {} }, "parent": { "1": {} } }],
+      [
+        "unwrap",
+        {
+          "_index": 5,
+          "name": { "5": {}, "11": {}, "17": {}, "36": {}, "50": {}, "60": {} },
+          "parent": {}
+        }
+      ],
+      [
+        "unwrapall",
+        { "_index": 24, "name": { "37": {}, "51": {}, "61": {} }, "parent": {} }
+      ]
+    ],
+    "pipeline": []
+  }
+}

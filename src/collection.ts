@@ -9,6 +9,10 @@ import {
 import { isPromise, isError } from './internal'
 import { isResult, isFailure, isSuccess } from './typeguards'
 
+/**
+ * A collection that can contain both [[`SuccessResult`]]s and
+ * [[`FailureResult`]]s
+ */
 export class Collection<R extends Result[] = Result[]> {
   protected _result: R
 
