@@ -43,6 +43,20 @@ export class Collection<R extends Result[] = Result[]> {
   public get failures(): FailureResult[] {
     return this._result.filter(isFailure)
   }
+
+  // [Symbol.iterator](): Iterator<unknown> {
+  //   const len = this._result.length
+  //   let step = 0
+  //   return {
+  //     next: (): IteratorResult<unknown> => {
+  //       if (step < len) {
+  //         return { value: this._result[step++], done: false }
+  //       } else {
+  //         return { value: null, done: true }
+  //       }
+  //     },
+  //   }
+  // }
 }
 
 export class SuccessCollection<R extends SuccessResult[]> extends Collection<

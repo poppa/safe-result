@@ -1,6 +1,4 @@
 import { ResultTuple } from './types'
-import { isPromise, isError } from './internal'
-import { isResult } from './typeguards'
 
 export type Result<T = unknown, E = Error> = SuccessResult<T> | FailureResult<E>
 export type AsyncResult<T = unknown, E = Error> = Promise<Result<T, E>>
@@ -58,28 +56,4 @@ export function success<T>(result: T): SuccessResult<T> {
 
 export function failure<E = Error>(error: E): FailureResult<E> {
   return new FailureResult(error)
-}
-
-export async function all<T extends unknown[]>(
-  res: T
-): Promise<Result<unknown, unknown>[]> {
-  const guard: AsyncResult<unknown, unknown>[] = res.map((r) => {
-    if (isPromise(r)) {
-      return new Promise((resolve, reject) => {
-        r.then((res) =>
-          resolve(isResult(res) ? res : success(res))
-        ).catch((e) => reject(isResult(e) ? e : failure(e)))
-      })
-    } else {
-      if (isResult(r)) {
-        return r.success ? Promise.resolve(r) : Promise.reject(r)
-      } else {
-        return isError(r)
-          ? Promise.reject(failure(r))
-          : Promise.resolve(success(r))
-      }
-    }
-  })
-
-  return Promise.all(guard)
 }
