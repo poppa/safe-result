@@ -5,6 +5,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3-beta.0] - 2020-05-01
+
+### Added
+
+- Typeguard methods `isCollection()`, `isSuccessCollection()` and
+  `isFailureCollection()`.
+- A `Collection`, `SuccessCollection` and `FailureCollection` class.
+- `allSettled()` which acts like `Promise.allSetteled()`. This will not abort
+  on rejections, and will return all promises resolved whether they were
+  successful or not
+
 ## [0.0.2-1] - 2020-04-29
 
 ### Changed
