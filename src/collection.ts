@@ -7,7 +7,7 @@ import {
   FailureResult,
 } from './result'
 import { isPromise, isError } from './internal'
-import { isResult, isFailure, isSuccess } from './helpers'
+import { isResult, isFailure, isSuccess } from './typeguards'
 
 export abstract class Collection<R extends Result[] = Result[]> {
   protected _result: R

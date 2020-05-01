@@ -9,4 +9,4 @@ export {
   Result,
   SuccessResult,
 } from './result'
-export { isFailure, isResult, isSuccess } from './helpers'
+export { isFailure, isResult, isSuccess } from './typeguards'

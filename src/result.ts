@@ -1,6 +1,6 @@
 import { ResultTuple } from './types'
 import { isPromise, isError } from './internal'
-import { isResult } from './helpers'
+import { isResult } from './typeguards'
 
 export type Result<T = unknown, E = Error> = SuccessResult<T> | FailureResult<E>
 export type AsyncResult<T = unknown, E = Error> = Promise<Result<T, E>>
