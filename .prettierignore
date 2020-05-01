@@ -1,4 +1,5 @@
 *.d.ts
 lib
 dist
+docs
 node_modules
