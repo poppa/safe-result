@@ -1,12 +1,3 @@
-import * as Result from './result'
+import * as Result from './lib'
 export default Result
-export {
-  success,
-  failure,
-  all,
-  isResult,
-  AsyncResult,
-  FailureResult,
-  Result,
-  SuccessResult,
-} from './result'
+export * from './lib'
