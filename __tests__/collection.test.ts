@@ -1,7 +1,13 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import 'jest'
 import { Result, success, failure } from '../src/result'
-import { all, SuccessCollection, FailureCollection } from '../src/collection'
+import {
+  all,
+  SuccessCollection,
+  FailureCollection,
+  allSetteled,
+  Collection,
+} from '../src/collection'
 
 function gimmeAsync<T, A extends boolean>(
   v: T,
@@ -65,5 +71,20 @@ describe('Collection tests', () => {
     expect(res.failure).toEqual(true)
     expect(res.failures.length).toEqual(1)
     expect(res.result.length).toEqual(1)
+  })
+
+  test('Collection.allSettled() should not throw and return an array of successes and failures', async () => {
+    const args = [
+      gimmeAsync(1, true),
+      gimmeAsyncError(new Error('Fail 1'), true),
+      gimmeAsyncError(new Error('Fail 2'), true),
+      gimmeAsync(2, false),
+    ]
+
+    const res = await allSetteled(args)
+
+    expect(res instanceof Collection).toEqual(true)
+    expect(res.successes.length).toEqual(2)
+    expect(res.failures.length).toEqual(2)
   })
 })
