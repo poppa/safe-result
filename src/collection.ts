@@ -45,6 +45,9 @@ export class Collection<R extends Result = Result> extends Array<R> {
   }
 }
 
+/**
+ * A collection only containing [[SuccessResult]]s
+ */
 export class SuccessCollection<R extends SuccessResult> extends Collection<R> {
   constructor(...items: R[]) {
     super(...items)
@@ -67,6 +70,9 @@ export class SuccessCollection<R extends SuccessResult> extends Collection<R> {
   }
 }
 
+/**
+ * A collection only containing [[FailureResult]]s
+ */
 export class FailureCollection<R extends FailureResult> extends Collection<R> {
   constructor(...items: R[]) {
     super(...items)
@@ -89,10 +95,16 @@ export class FailureCollection<R extends FailureResult> extends Collection<R> {
   }
 }
 
+/**
+ * @internal
+ */
 function toSuccess<T extends SuccessResult | unknown>(e: T): SuccessResult {
   return isSuccess(e) ? e : success(e)
 }
 
+/**
+ * @internal
+ */
 function toFailure<T extends FailureResult<unknown> | unknown>(
   e: T
 ): FailureResult<unknown> {
@@ -115,6 +127,9 @@ declare function guard<T extends unknown[], N extends false>(
   noThrow: N
 ): Promise<SuccessCollection<SuccessResult> | FailureCollection<FailureResult>>
 
+/**
+ * @internal
+ */
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 async function guard<T extends unknown[], N extends boolean>(
   res: T,
@@ -157,28 +172,61 @@ async function guard<T extends unknown[], N extends boolean>(
   }
 }
 
+/**
+ * Convenience method for creating an instance of [[Collection]]
+ * @param res
+ */
 export function collection<T extends Result>(res: T[]): Collection<T> {
   return new Collection(...res)
 }
 
+/**
+ * Convenience method for creating an instance of [[SuccessCollection]]
+ * @param res
+ */
 export function successCollection<T extends SuccessResult>(
   res: T[]
 ): SuccessCollection<T> {
   return new SuccessCollection(...res)
 }
 
+/**
+ * Convenience method for creating an instance of [[FailureCollection]]
+ * @param res
+ */
 export function failureCollection<T extends FailureResult>(
   res: T[]
 ): FailureCollection<T> {
   return new FailureCollection(...res)
 }
 
+/**
+ * Creates a `Promise` that resovles when all values resolves whether they
+ * were rejected or not.
+ *
+ * This will return a [[Collection]] that can contain both [[SuccessResult]]s
+ * and [[FailureResult]]s. You can use [[Collection.successes]] and
+ * [[Collection.failures]] to extract the respective types
+ *
+ * @param res
+ */
 export async function allSetteled<T extends unknown[]>(
   res: T
 ): Promise<Collection> {
   return guard(res, true)
 }
 
+/**
+ * Creates a `Promise` that resolved to either a [[SuccessCollection]] or a
+ * [[FailureCollection]].
+ *
+ * This behaves pretty much the same as `Promise.all()`, so it will abort and
+ * return a [[FailureCollection]] as soon as a value is a rejected value.
+ *
+ * @param res
+ * @returns Note that if a [[FailureCollection]] is returned it will alway be of
+ * length `1`
+ */
 export async function all<T extends unknown[]>(
   res: T
 ): Promise<
