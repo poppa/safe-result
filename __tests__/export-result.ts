@@ -19,6 +19,9 @@ import Result, {
   isResult,
   isSuccess,
   isSuccessCollection,
+  collection,
+  successCollection,
+  failureCollection,
 } from '../src'
 
 function s(): SuccessResult {
@@ -29,7 +32,7 @@ function e(): FailureResult {
   return failure(new Error('Fail'))
 }
 
-describe('import should do what it should do', () => {
+describe('export should do what it should do', () => {
   test('isResult() should be imported', () => {
     expect(isResult(success('test'))).toEqual(true)
     expect(isResult(failure('test'))).toEqual(true)
@@ -93,5 +96,17 @@ describe('import should do what it should do', () => {
   test('all() on default import', async () => {
     const all = await Result.all([s(), s()])
     expect(all.every((s: Result.Result) => s.success)).toEqual(true)
+  })
+
+  test('collection() is ok', () => {
+    expect(collection([success(1)])).toBeTruthy()
+  })
+
+  test('successCollection() is ok', () => {
+    expect(successCollection([success(1)])).toBeTruthy()
+  })
+
+  test('failureCollection() is ok', () => {
+    expect(failureCollection([failure(new Error('1'))])).toBeTruthy()
   })
 })

@@ -14,4 +14,7 @@ export {
   FailureCollection,
   all,
   allSetteled,
+  collection,
+  failureCollection,
+  successCollection,
 } from './collection'

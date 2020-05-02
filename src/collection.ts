@@ -157,6 +157,22 @@ async function guard<T extends unknown[], N extends boolean>(
   }
 }
 
+export function collection<T extends Result>(res: T[]): Collection<T> {
+  return new Collection(...res)
+}
+
+export function successCollection<T extends SuccessResult>(
+  res: T[]
+): SuccessCollection<T> {
+  return new SuccessCollection(...res)
+}
+
+export function failureCollection<T extends FailureResult>(
+  res: T[]
+): FailureCollection<T> {
+  return new FailureCollection(...res)
+}
+
 export async function allSetteled<T extends unknown[]>(
   res: T
 ): Promise<Collection> {
