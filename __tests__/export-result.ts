@@ -36,15 +36,15 @@ describe('import should do what it should do', () => {
   })
 
   test('isSuccessCollection() should be imported', () => {
-    expect(isSuccessCollection(new SuccessCollection([]))).toEqual(true)
+    expect(isSuccessCollection(new SuccessCollection(...[]))).toEqual(true)
   })
 
   test('isFailureCollection() should be imported', () => {
-    expect(isFailureCollection(new FailureCollection([]))).toEqual(true)
+    expect(isFailureCollection(new FailureCollection(...[]))).toEqual(true)
   })
 
   test('isCollection() should be imported', () => {
-    expect(isCollection(new Collection([]))).toEqual(true)
+    expect(isCollection(new Collection(...[]))).toEqual(true)
   })
 
   test('allSettled() should be imported', async () => {
@@ -59,11 +59,11 @@ describe('import should do what it should do', () => {
   })
 
   test('SuccessCollection should be imported', () => {
-    expect({} as SuccessCollection<Result.SuccessResult[]>).toEqual({})
+    expect({} as SuccessCollection<Result.SuccessResult>).toEqual({})
   })
 
   test('FailureCollection should be imported', () => {
-    expect({} as FailureCollection<Result.FailureResult[]>).toEqual({})
+    expect({} as FailureCollection<Result.FailureResult>).toEqual({})
   })
 
   test('Result type should be imported', () => {
@@ -92,6 +92,6 @@ describe('import should do what it should do', () => {
 
   test('all() on default import', async () => {
     const all = await Result.all([s(), s()])
-    expect(all.result.every((s: Result.Result) => s.success)).toEqual(true)
+    expect(all.every((s: Result.Result) => s.success)).toEqual(true)
   })
 })

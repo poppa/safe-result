@@ -5,6 +5,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- The `Collection` classes now extends `Array`, so they are proper array objects
+
 ## [0.0.3-beta.0] - 2020-05-01
 
 ### Added

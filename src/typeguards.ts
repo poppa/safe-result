@@ -47,7 +47,7 @@ export function isCollection(o: unknown): o is Collection {
  */
 export function isSuccessCollection(
   o: unknown
-): o is SuccessCollection<SuccessResult[]> {
+): o is SuccessCollection<SuccessResult> {
   return typeof o === 'object' && o instanceof SuccessCollection
 }
 
@@ -57,6 +57,6 @@ export function isSuccessCollection(
  */
 export function isFailureCollection(
   o: unknown
-): o is FailureCollection<FailureResult[]> {
+): o is FailureCollection<FailureResult> {
   return typeof o === 'object' && o instanceof FailureCollection
 }

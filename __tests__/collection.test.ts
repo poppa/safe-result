@@ -48,11 +48,12 @@ describe('Collection tests', () => {
     const res = await all(args)
     expect(successCallback).toBeCalledTimes(3)
     expect(res instanceof SuccessCollection).toEqual(true)
+    expect(Array.isArray(res)).toEqual(true)
     expect(res.success).toEqual(true)
     expect(res.successes.length).toEqual(3)
     expect(res.failure).toEqual(false)
     expect(res.failures.length).toEqual(0)
-    expect(res.result.length).toEqual(3)
+    expect(res.length).toEqual(3)
   })
 
   test('Collection.all() with an error should return an instance of ErrorCollection', async () => {
@@ -66,11 +67,12 @@ describe('Collection tests', () => {
     const res = await all(args)
     expect(successCallback).toHaveBeenCalledTimes(0)
     expect(res instanceof FailureCollection).toEqual(true)
+    expect(Array.isArray(res)).toEqual(true)
     expect(res.success).toEqual(false)
     expect(res.successes.length).toEqual(0)
     expect(res.failure).toEqual(true)
     expect(res.failures.length).toEqual(1)
-    expect(res.result.length).toEqual(1)
+    expect(res.length).toEqual(1)
   })
 
   test('Collection.allSettled() should not throw and return an array of successes and failures', async () => {

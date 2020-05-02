@@ -11,25 +11,21 @@ import { isResult, isFailure, isSuccess } from './typeguards'
 
 /**
  * A collection that can contain both [[`SuccessResult`]]s and
- * [[`FailureResult`]]s
+ * [[`FailureResult`]]s.
+ *
+ * @note This extends [[Array]] so it's a proper array object
  */
-export class Collection<R extends Result[] = Result[]> {
-  protected _result: R
-
-  constructor(_args: R) {
-    this._result = _args
-  }
-
-  public get result(): R {
-    return this._result
+export class Collection<R extends Result = Result> extends Array<R> {
+  constructor(...items: R[]) {
+    super(...items)
   }
 
   public unwrap(): unknown[] {
-    return this._result.map((x) => x.result)
+    return this.map((x) => x.result)
   }
 
   public unwrapAll(): unknown[][] {
-    return this._result.map((r) => r.unwrap())
+    return this.map((r) => r.unwrap())
   }
 
   public get success(): boolean {
@@ -41,31 +37,19 @@ export class Collection<R extends Result[] = Result[]> {
   }
 
   public get successes(): SuccessResult[] {
-    return this._result.filter(isSuccess)
+    return this.filter(isSuccess) as SuccessResult[]
   }
 
   public get failures(): FailureResult[] {
-    return this._result.filter(isFailure)
+    return this.filter(isFailure) as FailureResult[]
   }
-
-  // [Symbol.iterator](): Iterator<unknown> {
-  //   const len = this._result.length
-  //   let step = 0
-  //   return {
-  //     next: (): IteratorResult<unknown> => {
-  //       if (step < len) {
-  //         return { value: this._result[step++], done: false }
-  //       } else {
-  //         return { value: null, done: true }
-  //       }
-  //     },
-  //   }
-  // }
 }
 
-export class SuccessCollection<R extends SuccessResult[]> extends Collection<
-  R
-> {
+export class SuccessCollection<R extends SuccessResult> extends Collection<R> {
+  constructor(...items: R[]) {
+    super(...items)
+  }
+
   public get success(): true {
     return true
   }
@@ -74,8 +58,8 @@ export class SuccessCollection<R extends SuccessResult[]> extends Collection<
     return false
   }
 
-  public get successes(): SuccessResult[] {
-    return this._result
+  public get successes(): R[] {
+    return this.filter((s) => s.success)
   }
 
   public get failures(): [] {
@@ -83,9 +67,11 @@ export class SuccessCollection<R extends SuccessResult[]> extends Collection<
   }
 }
 
-export class FailureCollection<R extends FailureResult[]> extends Collection<
-  R
-> {
+export class FailureCollection<R extends FailureResult> extends Collection<R> {
+  constructor(...items: R[]) {
+    super(...items)
+  }
+
   public get success(): false {
     return false
   }
@@ -99,7 +85,7 @@ export class FailureCollection<R extends FailureResult[]> extends Collection<
   }
 
   public get failures(): FailureResult[] {
-    return this._result
+    return this.filter((e) => e.failure)
   }
 }
 
@@ -127,9 +113,7 @@ declare function guard<T extends unknown[], N extends true>(
 declare function guard<T extends unknown[], N extends false>(
   res: T,
   noThrow: N
-): Promise<
-  SuccessCollection<SuccessResult[]> | FailureCollection<FailureResult[]>
->
+): Promise<SuccessCollection<SuccessResult> | FailureCollection<FailureResult>>
 
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 async function guard<T extends unknown[], N extends boolean>(
@@ -164,12 +148,12 @@ async function guard<T extends unknown[], N extends boolean>(
     const resolved = (await Promise.all(x)) as Result[]
 
     if (noThrow) {
-      return new Collection(resolved)
+      return new Collection(...resolved)
     } else {
-      return new SuccessCollection(resolved as SuccessResult[])
+      return new SuccessCollection(...(resolved as SuccessResult[]))
     }
   } catch (e) {
-    return new FailureCollection([isFailure(e) ? e : failure(e)])
+    return new FailureCollection(...[isFailure(e) ? e : failure(e)])
   }
 }
 
@@ -182,7 +166,7 @@ export async function allSetteled<T extends unknown[]>(
 export async function all<T extends unknown[]>(
   res: T
 ): Promise<
-  SuccessCollection<SuccessResult[]> | FailureCollection<FailureResult[]>
+  SuccessCollection<SuccessResult> | FailureCollection<FailureResult>
 > {
   return guard(res, false)
 }
