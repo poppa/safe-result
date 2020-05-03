@@ -6,8 +6,9 @@ import {
   SuccessResult,
   FailureResult,
 } from './result'
-import { isPromise, isError } from './internal'
+import { isPromise, isError, toSuccess, toFailure } from './internal'
 import { isResult, isFailure, isSuccess } from './typeguards'
+import { ValueType } from './types'
 
 /**
  * A collection that can contain both [[`SuccessResult`]]s and
@@ -20,12 +21,12 @@ export class Collection<R extends Result = Result> extends Array<R> {
     super(...items)
   }
 
-  public unwrap(): unknown[] {
-    return this.map((x) => x.result)
+  public unwrap(): Array<ValueType<R>> {
+    return this.map((x) => x.result) as Array<ValueType<R>>
   }
 
-  public unwrapAll(): unknown[][] {
-    return this.map((r) => r.unwrap())
+  public unwrapAll(): Array<ValueType<R>>[] {
+    return this.map((r) => r.unwrap()) as Array<ValueType<R>>[]
   }
 
   public get success(): boolean {
@@ -95,44 +96,31 @@ export class FailureCollection<R extends FailureResult> extends Collection<R> {
   }
 }
 
-/**
- * @internal
- */
-function toSuccess<T extends SuccessResult | unknown>(e: T): SuccessResult {
-  return isSuccess(e) ? e : success(e)
-}
-
-/**
- * @internal
- */
-function toFailure<T extends FailureResult<unknown> | unknown>(
-  e: T
-): FailureResult<unknown> {
-  return isFailure(e) ? e : failure(e)
-}
+// Overload signatures must all be ambient or non-ambient.ts(2384)
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+declare function guard<T, N extends true>(
+  res: Array<T | Promise<T>>,
+  noThrow: N
+): Promise<Collection<Result<ValueType<T>>>>
 
 // Overload signatures must all be ambient or non-ambient.ts(2384)
 // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
-declare function guard<T extends unknown[], N extends true>(
-  res: T,
+declare function guard<T, N extends false>(
+  res: Array<T | Promise<T>>,
   noThrow: N
-): Promise<Collection>
-
-// Overload signatures must all be ambient or non-ambient.ts(2384)
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-declare function guard<T extends unknown[], N extends false>(
-  res: T,
-  noThrow: N
-): Promise<SuccessCollection<SuccessResult> | FailureCollection<FailureResult>>
+): Promise<
+  | SuccessCollection<SuccessResult<ValueType<T>>>
+  | FailureCollection<FailureResult>
+>
 
 /**
  * @internal
  */
 // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-async function guard<T extends unknown[], N extends boolean>(
-  res: T,
+async function guard<T, N extends boolean>(
+  res: Array<T | Promise<T>>,
   noThrow: N
 ) {
   try {
@@ -210,9 +198,9 @@ export function failureCollection<T extends FailureResult>(
  *
  * @param res
  */
-export async function allSetteled<T extends unknown[]>(
-  res: T
-): Promise<Collection> {
+export async function allSetteled<T>(
+  res: Array<T | Promise<T>>
+): Promise<Collection<SuccessResult<ValueType<T>> | FailureResult>> {
   return guard(res, true)
 }
 
@@ -227,10 +215,11 @@ export async function allSetteled<T extends unknown[]>(
  * @returns Note that if a [[FailureCollection]] is returned it will alway be of
  * length `1`
  */
-export async function all<T extends unknown[]>(
-  res: T
+export async function all<T>(
+  res: Array<T | Promise<T>>
 ): Promise<
-  SuccessCollection<SuccessResult> | FailureCollection<FailureResult>
+  | SuccessCollection<SuccessResult<ValueType<T>>>
+  | FailureCollection<FailureResult>
 > {
   return guard(res, false)
 }

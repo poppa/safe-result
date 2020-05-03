@@ -12,6 +12,9 @@ export type Result<T = unknown, E = Error> = SuccessResult<T> | FailureResult<E>
  */
 export type AsyncResult<T = unknown, E = Error> = Promise<Result<T, E>>
 
+// export type ExtractType<T extends Result> = T extends SuccessResult
+//   ? T.result
+
 /**
  * Result interface
  */
