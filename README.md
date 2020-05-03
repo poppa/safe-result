@@ -4,6 +4,10 @@
 
 Creates a result that is either a success or failure.
 
+## Usage
+
+### Single values
+
 ```ts
 import Result from 'safe-result'
 
