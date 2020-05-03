@@ -1,3 +1,9 @@
+/**
+ * This module just re-exports stuff
+ * @packageDocumentation
+ * @internal
+ */
+
 export * from './types'
 export * from './typeguards'
 export {

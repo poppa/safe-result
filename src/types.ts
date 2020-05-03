@@ -1,3 +1,8 @@
+/**
+ * These types can be considered internal
+ * @packageDocumentation
+ */
+
 import { Result } from './result'
 
 /**
@@ -6,4 +11,7 @@ import { Result } from './result'
  */
 export type ResultTuple<T = unknown, E = unknown> = [T, E]
 
+/**
+ * Extracts the type of the value from a [[Result]] type
+ */
 export type ValueType<T> = T extends Result<infer RT> ? RT : T

@@ -22,8 +22,9 @@ export interface ResultType {
   /** The value */
   readonly result: unknown
   /**
-   * Returns a tuple with either `[successResult, undefined]` or
-   * `[undefined, errorResult]`.
+   * Returns a tuple with either `[successValue, undefined]` or
+   * `[undefined, failureValue]` depending on whether the result is a
+   * [[SuccessResult]] or a [[FailureResult]]
    */
   unwrap(): ResultTuple<unknown, unknown>
   /** Returns `true` if a success result, `false` otherwise` */
@@ -42,14 +43,17 @@ export class SuccessResult<T = unknown> implements ResultType {
     this.result = data
   }
 
+  /** @inheritdoc */
   public unwrap(): ResultTuple<T, undefined> {
     return [this.result, undefined]
   }
 
+  /** Always return `true` */
   public get success(): true {
     return true
   }
 
+  /** Always returns false */
   public get failure(): false {
     return false
   }
@@ -65,14 +69,17 @@ export class FailureResult<E = Error> implements ResultType {
     this.result = error
   }
 
+  /** @inheritdoc */
   public unwrap(): ResultTuple<undefined, E> {
     return [undefined, this.result]
   }
 
+  /** Always returns `false` */
   public get success(): false {
     return false
   }
 
+  /** Always returns `true` */
   public get failure(): true {
     return true
   }
