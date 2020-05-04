@@ -71,7 +71,7 @@ describe('Collection tests', () => {
 
     const res = await all(args)
     expect(res instanceof FailureResult).toEqual(true)
-    expect(res.result instanceof Error).toEqual(true)
+    expect(res.error instanceof Error).toEqual(true)
     expect(res.success).toEqual(false)
     expect(res.failure).toEqual(true)
 

@@ -62,14 +62,14 @@ async function guard(res: unknown[], noThrow: boolean) {
     if (noThrow) {
       return new SuccessAndFailureResult(
         resolved.filter(isSuccess).map((s) => s.result),
-        resolved.filter(isFailure).map((e) => e.result)
+        resolved.filter(isFailure).map((e) => e.error)
       )
     } else {
       return new SuccessResult(resolved.map((s) => s.result))
     }
   } catch (e) {
     e = isFailure(e) ? e : failure(e)
-    return new FailureResult(e.result)
+    return new FailureResult(e.error)
   }
 }
 
