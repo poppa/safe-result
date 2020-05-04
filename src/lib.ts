@@ -15,4 +15,4 @@ export {
   failure,
   success,
 } from './result'
-export { all, allSetteled } from './collection'
+export { all, allSettled } from './collection'

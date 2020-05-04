@@ -7,7 +7,7 @@ import {
   FailureResult,
   SuccessAndFailureResult,
 } from '../src/result'
-import { all, allSetteled } from '../src/collection'
+import { all, allSettled } from '../src/collection'
 
 function gimmeAsync<T, A extends boolean>(
   v: T,
@@ -111,7 +111,7 @@ describe('Collection tests', () => {
       gimmeAsync(5, true),
     ]
 
-    const res = await allSetteled(args)
+    const res = await allSettled(args)
 
     expect(res instanceof SuccessAndFailureResult).toEqual(true)
     expect(res.success).toEqual(true)
@@ -123,7 +123,7 @@ describe('Collection tests', () => {
   test('Collection.allSettled() with only successes should have a false `failure` property', async () => {
     const args = [gimmeAsync(1, true), gimmeAsync(2, true)]
 
-    const res = await allSetteled(args)
+    const res = await allSettled(args)
     expect(res.failure).toEqual(false)
 
     const [r, e] = res.unwrap()

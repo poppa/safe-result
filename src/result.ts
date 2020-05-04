@@ -53,12 +53,12 @@ export class SuccessResult<T = unknown> implements ResultType {
     return [this.result, undefined]
   }
 
-  /** Always return `true` */
+  /** Always returns `true` */
   public get success(): true {
     return true
   }
 
-  /** Always returns false */
+  /** Always returns `false` */
   public get failure(): false {
     return false
   }
@@ -91,6 +91,10 @@ export class FailureResult<E = Error> implements ResultType {
   }
 }
 
+/**
+ * Class representing a result that can both have successful and failed
+ * values. This is only used internally by and returned from [[allSettled]]
+ */
 export class SuccessAndFailureResult<T, E = Error> implements ResultType {
   public readonly result: T
   public readonly error: E

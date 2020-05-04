@@ -110,7 +110,7 @@ async function guard(res: unknown[], noThrow: boolean) {
  *
  * @param values
  */
-export async function allSetteled<T>(
+export async function allSettled<T>(
   values: Array<T | Promise<T>>
 ): Promise<SuccessAndFailureResult<ValueType<T>[], Error[]>> {
   return guard(values, true)
