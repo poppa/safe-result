@@ -9,7 +9,7 @@ import Result, {
   Result as TResult,
   ResultTuple,
   all,
-  allSetteled,
+  allSettled,
   isFailure,
   isResult,
   isSuccess,
@@ -30,7 +30,7 @@ describe('export should do what it should do', () => {
   })
 
   test('allSettled() should be imported', async () => {
-    expect((await allSetteled([1])).unwrap()).toEqual([[1], []])
+    expect((await allSettled([1])).unwrap()).toEqual([[1], []])
   })
 
   test('all() should be imported', async () => {
