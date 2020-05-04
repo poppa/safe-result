@@ -69,21 +69,10 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Classes</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter"><a href="../classes/_collection_.collection.html" class="tsd-kind-icon">Collection</a></li>
-								<li class="tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter"><a href="../classes/_collection_.failurecollection.html" class="tsd-kind-icon">Failure<wbr>Collection</a></li>
-								<li class="tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter"><a href="../classes/_collection_.successcollection.html" class="tsd-kind-icon">Success<wbr>Collection</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_collection_.html#all" class="tsd-kind-icon">all</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_collection_.html#allsetteled" class="tsd-kind-icon">all<wbr>Setteled</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_collection_.html#collection-1" class="tsd-kind-icon">collection</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_collection_.html#failurecollection-1" class="tsd-kind-icon">failure<wbr>Collection</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_collection_.html#successcollection-1" class="tsd-kind-icon">success<wbr>Collection</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="_collection_.html#allsettled" class="tsd-kind-icon">all<wbr>Settled</a></li>
 							</ul>
 						</section>
 					</div>
@@ -95,22 +84,49 @@
 					<a name="all" class="tsd-anchor"></a>
 					<h3>all</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">all&lt;T&gt;<span class="tsd-signature-symbol">(</span>res<span class="tsd-signature-symbol">: </span><a href="../classes/_collection_.collection.html#array" class="tsd-signature-type">Array</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_collection_.successcollection.html" class="tsd-signature-type">SuccessCollection</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.successresult.html" class="tsd-signature-type">SuccessResult</a><span class="tsd-signature-symbol">&lt;</span><a href="_types_.html#valuetype" class="tsd-signature-type">ValueType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_collection_.failurecollection.html" class="tsd-signature-type">FailureCollection</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.failureresult.html" class="tsd-signature-type">FailureResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">all&lt;T&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.successresult.html" class="tsd-signature-type">SuccessResult</a><span class="tsd-signature-symbol">&lt;</span><a href="_types_.html#valuetype" class="tsd-signature-type">ValueType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_result_.failureresult.html" class="tsd-signature-type">FailureResult</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/collection.ts#L218">src/collection.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/d232251/src/collection.ts#L157">collection.ts:157</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a <code>Promise</code> that resolved to either a <a href="../classes/_collection_.successcollection.html">SuccessCollection</a> or a
-									<a href="../classes/_collection_.failurecollection.html">FailureCollection</a>.</p>
+									<p>Creates a <code>Promise</code> that resolves to either a <a href="../classes/_result_.successresult.html">SuccessResult</a> or a
+									<a href="../classes/_result_.failureresult.html">FailureResult</a>.</p>
 								</div>
 								<p>This behaves pretty much the same as <code>Promise.all()</code>, so it will abort and
-								return a <a href="../classes/_collection_.failurecollection.html">FailureCollection</a> as soon as a value is a rejected value.</p>
+								return a <a href="../classes/_result_.failureresult.html">FailureResult</a> as soon as a value is a rejected value.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><p><em>Example with all resolved promises</em></p>
+										<pre><code class="language-ts"><span class="hljs-keyword">const</span> values = [<span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-number">1</span>), <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-number">2</span>), <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-number">3</span>)]
+<span class="hljs-keyword">const</span> [res, err] = (<span class="hljs-keyword">await</span> Result.all(values)).unwrap()
+
+<span class="hljs-keyword">if</span> (err) { <span class="hljs-comment">// This will never be `true` in this case</span>
+  <span class="hljs-keyword">return</span>
+}
+
+<span class="hljs-built_in">console</span>.log(
+  res.map(<span class="hljs-function">(<span class="hljs-params">num</span>) =&gt;</span> <span class="hljs-string">`Result <span class="hljs-subst">${num}</span>`</span>).join(<span class="hljs-string">', '</span>)
+)
+
+<span class="hljs-comment">// Result 1, Result 2, Result 3</span></code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><p><em>Example where one or more promises are rejected</em></p>
+										<pre><code class="language-ts"><span class="hljs-keyword">const</span> values = [<span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-number">1</span>), <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-number">2</span>), <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-number">3</span>)]
+<span class="hljs-keyword">const</span> [res, err] = (<span class="hljs-keyword">await</span> Result.all(values)).unwrap()
+
+<span class="hljs-keyword">if</span> (err) { <span class="hljs-comment">// This will always be `true` in this case</span>
+  <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'An error occured:'</span>, err.message)
+  <span class="hljs-keyword">return</span>
+}</code></pre>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -121,36 +137,62 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>res: <a href="../classes/_collection_.collection.html#array" class="tsd-signature-type">Array</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>values: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromiseLike</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_collection_.successcollection.html" class="tsd-signature-type">SuccessCollection</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.successresult.html" class="tsd-signature-type">SuccessResult</a><span class="tsd-signature-symbol">&lt;</span><a href="_types_.html#valuetype" class="tsd-signature-type">ValueType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_collection_.failurecollection.html" class="tsd-signature-type">FailureCollection</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.failureresult.html" class="tsd-signature-type">FailureResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>Note that if a <a href="../classes/_collection_.failurecollection.html">FailureCollection</a> is returned it will alway be of
-							length <code>1</code></p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.successresult.html" class="tsd-signature-type">SuccessResult</a><span class="tsd-signature-symbol">&lt;</span><a href="_types_.html#valuetype" class="tsd-signature-type">ValueType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_result_.failureresult.html" class="tsd-signature-type">FailureResult</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="allsetteled" class="tsd-anchor"></a>
-					<h3>all<wbr>Setteled</h3>
+					<a name="allsettled" class="tsd-anchor"></a>
+					<h3>all<wbr>Settled</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">all<wbr>Setteled&lt;T&gt;<span class="tsd-signature-symbol">(</span>res<span class="tsd-signature-symbol">: </span><a href="../classes/_collection_.collection.html#array" class="tsd-signature-type">Array</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_collection_.collection.html" class="tsd-signature-type">Collection</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.successresult.html" class="tsd-signature-type">SuccessResult</a><span class="tsd-signature-symbol">&lt;</span><a href="_types_.html#valuetype" class="tsd-signature-type">ValueType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_result_.failureresult.html" class="tsd-signature-type">FailureResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">all<wbr>Settled&lt;T&gt;<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.successandfailureresult.html" class="tsd-signature-type">SuccessAndFailureResult</a><span class="tsd-signature-symbol">&lt;</span><a href="_types_.html#valuetype" class="tsd-signature-type">ValueType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/collection.ts#L201">src/collection.ts:201</a></li>
+									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/d232251/src/collection.ts#L113">collection.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Creates a <code>Promise</code> that resovles when all values resolves whether they
-									were rejected or not.</p>
+									<p>Creates a <code>Promise</code> that resovles after all values have either resolved or
+									rejected.</p>
 								</div>
-								<p>This will return a <a href="../classes/_collection_.collection.html">Collection</a> that can contain both <a href="../classes/_result_.successresult.html">SuccessResult</a>s
-									and <a href="../classes/_result_.failureresult.html">FailureResult</a>s. You can use <a href="../classes/_collection_.collection.html#successes">Collection.successes</a> and
-								<a href="../classes/_collection_.collection.html#failures">Collection.failures</a> to extract the respective types</p>
+								<dl class="tsd-comment-tags">
+									<dt>note</dt>
+									<dd><p>The returned <a href="../classes/_result_.successandfailureresult.html">SuccessAndFailureResult</a> object can indicate being
+										both a <code>success</code> and <code>failure</code>.</p>
+										<p>If <code>SuccessAndFailureResult.success</code> is <code>true</code> there are one or more resovled
+										promises.</p>
+										<p>Likewise, if <code>SuccessAndFailureResult.failure</code> is <code>true</code> there are one or
+										more rejected promises.</p>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span class="hljs-keyword">const</span> args = [
+  <span class="hljs-built_in">Promise</span>.resolve(success(<span class="hljs-number">1</span>)),
+  <span class="hljs-built_in">Promise</span>.resolve(success(<span class="hljs-number">2</span>)),
+  <span class="hljs-built_in">Promise</span>.reject(failure(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'First failure'</span>))),
+]
+
+<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> Result.allSettled(args)
+
+<span class="hljs-keyword">if</span> (res.success) { <span class="hljs-comment">// Will be `true` in this case</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Values:'</span>, res.result.join(<span class="hljs-string">', '</span>))
+  <span class="hljs-comment">// Values: 1, 2</span>
+}
+
+<span class="hljs-keyword">if</span> (res.failure) { <span class="hljs-comment">// Will also be true in this case</span>
+  <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Errors:'</span>, res.error.map(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> e.message).join(<span class="hljs-string">', '</span>))
+  <span class="hljs-comment">// Errors: First failure</span>
+}</code></pre>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -161,120 +203,12 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>res: <a href="../classes/_collection_.collection.html#array" class="tsd-signature-type">Array</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>values: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_collection_.collection.html" class="tsd-signature-type">Collection</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.successresult.html" class="tsd-signature-type">SuccessResult</a><span class="tsd-signature-symbol">&lt;</span><a href="_types_.html#valuetype" class="tsd-signature-type">ValueType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../classes/_result_.failureresult.html" class="tsd-signature-type">FailureResult</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="collection-1" class="tsd-anchor"></a>
-					<h3>collection</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">collection&lt;T&gt;<span class="tsd-signature-symbol">(</span>res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_collection_.collection.html" class="tsd-signature-type">Collection</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/collection.ts#L167">src/collection.ts:167</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Convenience method for creating an instance of <a href="../classes/_collection_.collection.html">Collection</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>T<span class="tsd-signature-symbol">: </span><a href="_result_.html#result" class="tsd-signature-type">Result</a></h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>res: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/_collection_.collection.html" class="tsd-signature-type">Collection</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="failurecollection-1" class="tsd-anchor"></a>
-					<h3>failure<wbr>Collection</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">failure<wbr>Collection&lt;T&gt;<span class="tsd-signature-symbol">(</span>res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_collection_.failurecollection.html" class="tsd-signature-type">FailureCollection</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/collection.ts#L185">src/collection.ts:185</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Convenience method for creating an instance of <a href="../classes/_collection_.failurecollection.html">FailureCollection</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>T<span class="tsd-signature-symbol">: </span><a href="../classes/_result_.failureresult.html" class="tsd-signature-type">FailureResult</a></h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>res: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/_collection_.failurecollection.html" class="tsd-signature-type">FailureCollection</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-					<a name="successcollection-1" class="tsd-anchor"></a>
-					<h3>success<wbr>Collection</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">success<wbr>Collection&lt;T&gt;<span class="tsd-signature-symbol">(</span>res<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_collection_.successcollection.html" class="tsd-signature-type">SuccessCollection</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/collection.ts#L175">src/collection.ts:175</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Convenience method for creating an instance of <a href="../classes/_collection_.successcollection.html">SuccessCollection</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>T<span class="tsd-signature-symbol">: </span><a href="../classes/_result_.successresult.html" class="tsd-signature-type">SuccessResult</a></h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>res: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/_collection_.successcollection.html" class="tsd-signature-type">SuccessCollection</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/_result_.successandfailureresult.html" class="tsd-signature-type">SuccessAndFailureResult</a><span class="tsd-signature-symbol">&lt;</span><a href="_types_.html#valuetype" class="tsd-signature-type">ValueType</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -305,29 +239,11 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/_collection_.collection.html" class="tsd-kind-icon">Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/_collection_.failurecollection.html" class="tsd-kind-icon">Failure<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/_collection_.successcollection.html" class="tsd-kind-icon">Success<wbr>Collection</a>
-					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="_collection_.html#all" class="tsd-kind-icon">all</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_collection_.html#allsetteled" class="tsd-kind-icon">all<wbr>Setteled</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_collection_.html#collection-1" class="tsd-kind-icon">collection</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_collection_.html#failurecollection-1" class="tsd-kind-icon">failure<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="_collection_.html#successcollection-1" class="tsd-kind-icon">success<wbr>Collection</a>
+						<a href="_collection_.html#allsettled" class="tsd-kind-icon">all<wbr>Settled</a>
 					</li>
 				</ul>
 			</nav>

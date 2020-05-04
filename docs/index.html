@@ -65,14 +65,114 @@
 				<a href="#safe-result" id="safe-result" style="color: inherit; text-decoration: none;">
 					<h1>safe-result</h1>
 				</a>
-				<p><strong>In heavy <em>BETA</em> state</strong></p>
-				<p>Creates a result that is either a success or failure.</p>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
+				<p>One of the more challenging things in software development is error handling.
+					When should an error be throw? When should it be caught? Should I catch it
+					silently and return &quot;<code>undefined</code>&quot;? But if I do that someone higher up the
+				callstack might want to get hold of the error for logging and what not.</p>
+				<p>The purpose of this library is trying to make this a bit more coherent.
+					Languages like Rust and Go have built-in mechanisms to make error handling a
+					bit more concise and coherent than using <code>try / catch</code>, which imho litters the
+				the code enormously.</p>
+				<p>What more is, you often need to resort to using <code>let</code> instead of <code>const</code>
+				just because you need to use the value after <code>try / catch</code>.</p>
+				<p>The usecase for this library is to be used in you own library functions in your
+					application. There really is no way around resorting to <code>try / catch</code> in
+				Javascript, so you will have to use <code>try / catch</code> in your own &quot;low-level&quot; code.</p>
+				<a href="#api" id="api" style="color: inherit; text-decoration: none;">
+					<h2>API</h2>
+				</a>
+				<p>You can either import the module via the default import</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> Result <span class="hljs-keyword">from</span> <span class="hljs-string">'safe-result'</span></code></pre>
+				<p>or only import the methods you need</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { success, failure } <span class="hljs-keyword">from</span> <span class="hljs-string">'safe-result'</span></code></pre>
+				<ul>
+					<li>
+						<a href="#function-successlttgtvalue-t-successresultlttgt" id="function-successlttgtvalue-t-successresultlttgt" style="color: inherit; text-decoration: none;">
+							<h3><code>function success&lt;T&gt;(value: T): SuccessResult&lt;T&gt;</code></h3>
+						</a>
+						<p>Method for creating a successful result.</p>
+					</li>
+					<li>
+						<a href="#function-failurelttgterror-t-failureresultlttgt" id="function-failurelttgterror-t-failureresultlttgt" style="color: inherit; text-decoration: none;">
+							<h3><code>function failure&lt;T&gt;(error: T): FailureResult&lt;T&gt;</code></h3>
+						</a>
+						<p>Method for creating a failed result.</p>
+					</li>
+					<li>
+						<a href="#type-resultltt--unknown-e--errorgt--successresultlttgt--failureresultltegt" id="type-resultltt--unknown-e--errorgt--successresultlttgt--failureresultltegt" style="color: inherit; text-decoration: none;">
+							<h3><code>type Result&lt;T = unknown, E = Error&gt; = SuccessResult&lt;T&gt; | FailureResult&lt;E&gt;</code></h3>
+						</a>
+						<p>Type that can be used as return type in methods returning either a
+						<code>SuccessResult</code> or <code>FailureResult</code>.</p>
+						<pre><code class="language-ts"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myFunc</span>(<span class="hljs-params">ok: <span class="hljs-built_in">boolean</span></span>): <span class="hljs-title">Result</span>&lt;</span>{ name: <span class="hljs-built_in">string</span>; age: <span class="hljs-built_in">number</span> }&gt; {
+  <span class="hljs-keyword">return</span> ok
+    ? success({ name: <span class="hljs-string">'John Doe'</span>, age: <span class="hljs-number">54</span> })
+    : failure(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Bad'</span>))
+}</code></pre>
+					</li>
+					<li>
+						<a href="#type-asyncresultltt--unknown-e--errorgt--promiseltresultltt-egtgt" id="type-asyncresultltt--unknown-e--errorgt--promiseltresultltt-egtgt" style="color: inherit; text-decoration: none;">
+							<h3><code>type AsyncResult&lt;T = unknown, E = Error&gt; = Promise&lt;Result&lt;T, E&gt;&gt;</code></h3>
+						</a>
+						<p>Same as writing <code>Promise&lt;Result&lt;T, E&gt;&gt;</code>.</p>
+					</li>
+					<li>
+						<a href="#async-function-alllttgtvalues-t--promiselikelttgt-promiseltresultlttgtgt" id="async-function-alllttgtvalues-t--promiselikelttgt-promiseltresultlttgtgt" style="color: inherit; text-decoration: none;">
+							<h3><code>async function all&lt;T&gt;(values: (T | PromiseLike&lt;T&gt;)[]): Promise&lt;Result&lt;T[]&gt;&gt;</code></h3>
+						</a>
+						<p>Behaves like <code>Promise.all()</code> except it doesn&#39;t throw. If all values are
+							resolved this promise will resolve to a <code>SuccessResult</code> where the <code>result</code>
+						property is an array of the resolved values.</p>
+						<p>If one value fails, this promise will immediately resolve to a
+							<code>FailureResult</code> where the <code>error</code> property is the error from the rejected
+						promise.</p>
+					</li>
+					<li>
+						<a href="#async-function-allsetteledlttgtvalues-arrayltt--promiselttgtgt-promiseltsuccessandfailureresultltt-errorgtgt" id="async-function-allsetteledlttgtvalues-arrayltt--promiselttgtgt-promiseltsuccessandfailureresultltt-errorgtgt" style="color: inherit; text-decoration: none;">
+							<h3><code>async function allSetteled&lt;T&gt;(values: Array&lt;T | Promise&lt;T&gt;&gt;): Promise&lt;SuccessAndFailureResult&lt;T[], Error[]&gt;&gt;</code></h3>
+						</a>
+						<p>Just like <code>Promise.allSettled()</code> this will wait for all values to either
+							resolve or reject. This will always return a <code>SuccessAndFailureResult</code>
+						instance where both the <code>result</code> and <code>error</code> properties can be &quot;truthy&quot;.</p>
+					</li>
+					<li>
+						<a href="#interface-resulttype" id="interface-resulttype" style="color: inherit; text-decoration: none;">
+							<h3><code>interface ResultType</code></h3>
+						</a>
+						<p>Both <code>SuccessResult</code>, <code>FailureResult</code> and <code>SuccessAndFailureResult</code> implements
+						this interface.</p>
+						<ul>
+							<li><p><strong><code>ResultType.result</code></strong> Property of the successful value</p>
+							</li>
+							<li><p><strong><code>ResultType.error</code></strong> Property of the failed value</p>
+							</li>
+							<li><p><strong><code>ResultType.unwrap(): [successValue, failValue]</code></strong> Returns a tuple where
+									the first index is the successful value and the second the failed value.
+									For a <code>SuccessResult</code> this is always <code>[successfulValue, undefined]</code>, and
+								for a <code>FailureResult</code> it&#39;s always <code>[undefined, failedValue]</code>.</p>
+								<p>The <code>SuccessAndFailureResult</code> returned from <code>allSetteled()</code> will always
+									be a <code>[[...successfulValues], [...failedValues]]</code> tuple, so neither index
+								will be <code>undefined</code>, but can be an array of length <code>0</code>.</p>
+							</li>
+							<li><p><strong><code>ResultType.success</code></strong> If <code>true</code> it&#39;s a successful value</p>
+							</li>
+							<li><p><strong><code>ResultType.failure</code></strong> If <code>true</code> it&#39;s a failed value</p>
+								<p>For <code>SuccessResult</code> and <code>FailureResult</code> the <code>success</code> and <code>failure</code>
+								properties are mutually exclusive.</p>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<a href="#examples" id="examples" style="color: inherit; text-decoration: none;">
+					<h2>Examples</h2>
 				</a>
 				<a href="#single-values" id="single-values" style="color: inherit; text-decoration: none;">
 					<h3>Single values</h3>
 				</a>
+				<p>A single successful value is represented by an instance of <code>SuccessResult</code>.
+				A single failed value is represented by an instance of <code>FailureResult</code>.</p>
+				<p>Instances of these classes can be created by calling <code>success(okValue)</code> and
+				<code>failure(Error)</code> respectively.</p>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> Result <span class="hljs-keyword">from</span> <span class="hljs-string">'safe-result'</span>
 
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unsafeMethod</span>(<span class="hljs-params"></span>): <span class="hljs-title">Result</span>&lt;</span>{ name: <span class="hljs-built_in">string</span>; age: <span class="hljs-built_in">number</span> }&gt; {
@@ -89,7 +189,7 @@
 <span class="hljs-keyword">if</span> (r1.success) {
   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Got OK result'</span>, r1.result) <span class="hljs-comment">// {name: 'Some string', age: x}</span>
 } <span class="hljs-keyword">else</span> {
-  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Got failed result:'</span>, r1.result) <span class="hljs-comment">// Error('some error')</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Got failed result:'</span>, r1.error) <span class="hljs-comment">// Error('some error')</span>
 }
 
 <span class="hljs-comment">// Method 2</span>
@@ -102,6 +202,68 @@
 
 <span class="hljs-comment">// Safe to index result here</span>
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Name:`</span>, result.name)</code></pre>
+				<a href="#async-collections" id="async-collections" style="color: inherit; text-decoration: none;">
+					<h3>Async collections</h3>
+				</a>
+				<a href="#resultall" id="resultall" style="color: inherit; text-decoration: none;">
+					<h4><code>Result.all()</code></h4>
+				</a>
+				<p><code>safe-result</code> sort of implements <code>Promise.all()</code>, except it doesn&#39;t throw when
+					a value is rejected. Instead you get back a <code>FailureResult</code> on error and a
+				<code>SuccessResult</code> if all promises were resovled.</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> Result, { success, failure } <span class="hljs-keyword">from</span> <span class="hljs-string">'safe-result'</span>
+
+<span class="hljs-keyword">const</span> args = [<span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-number">1</span>), <span class="hljs-built_in">Promise</span>.resovle(<span class="hljs-number">2</span>)]
+<span class="hljs-keyword">const</span> [r1, e1] = (<span class="hljs-keyword">await</span> Result.all(args)).unwrap()
+
+<span class="hljs-keyword">if</span> (e1) {
+  <span class="hljs-built_in">console</span>.error(<span class="hljs-string">`An error occured:`</span>, e1.message)
+  <span class="hljs-keyword">return</span>
+}
+
+<span class="hljs-built_in">console</span>.log(r1) <span class="hljs-comment">// [1, 2]</span></code></pre>
+				<p><strong>Note:</strong> <code>Result.all()</code> doesn&#39;t neccessarily have to be given <code>Promises</code> or
+					<code>Promise&lt;Result&gt;</code>-objects as arguments. If an argument isn&#39;t a promise, one
+				will be created.</p>
+				<p><strong>Note:</strong> If the value array given to <code>Result.all()</code> are of different types
+					you have to explicitly state the types of elements in the array argument for
+					the type inference of the result to be correct. This however is no different
+				from how <code>Promise.all()</code> behaves.</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">const</span> args: <span class="hljs-built_in">Promise</span>&lt;<span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span>&gt;[] = [
+  <span class="hljs-built_in">Promise</span>.resovle(<span class="hljs-number">1</span>),
+  <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">'two'</span>),
+]
+
+<span class="hljs-keyword">const</span> [res] = (<span class="hljs-keyword">await</span> Result.all(args)).unwrap()
+
+<span class="hljs-keyword">if</span> (res) {
+  <span class="hljs-comment">// Infered type of `res` here will be `Array&lt;string | number&gt;`</span>
+}</code></pre>
+				<p>...</p>
+				<a href="#resultallsettled" id="resultallsettled" style="color: inherit; text-decoration: none;">
+					<h4><code>Result.allSettled()</code></h4>
+				</a>
+				<p>This works pretty much the same as <code>Promise.allSettled()</code> except you get back
+					a <code>SuccessAndFailureResult</code> instance. The way this differs from the
+					<code>SuccessResult</code> and <code>FailureResult</code> classes is that this can be both a success
+				and a failure at the same time.</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">const</span> args = [<span class="hljs-built_in">Promise</span>.resovle(<span class="hljs-number">1</span>), <span class="hljs-built_in">Promise</span>.reject(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'Fail'</span>))]
+
+<span class="hljs-keyword">const</span> res = <span class="hljs-keyword">await</span> Result.allSettled(args)
+
+<span class="hljs-keyword">if</span> (res.success) {
+  <span class="hljs-comment">// Will be true in this case</span>
+  <span class="hljs-comment">// res.result -&gt; [1]</span>
+}
+
+<span class="hljs-keyword">if</span> (res.failure) {
+  <span class="hljs-comment">// Will also be true in this case</span>
+  <span class="hljs-comment">// res.error -&gt; [Error('Fail')]</span>
+}
+
+<span class="hljs-comment">// If you simply want to ignore eventual errors</span>
+
+<span class="hljs-keyword">const</span> [res] = (<span class="hljs-keyword">await</span> Result.allSettled(args)).unwrap()</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

@@ -109,6 +109,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_result_.failureresult.html#error" class="tsd-kind-icon">error</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_result_.failureresult.html#result" class="tsd-kind-icon">result</a></li>
 							</ul>
 						</section>
@@ -140,7 +141,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/result.ts#L66">src/result.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/d232251/src/result.ts#L72">result.ts:72</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -157,13 +158,24 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="error" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> error</h3>
+					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">E</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_result_.resulttype.html">ResultType</a>.<a href="../interfaces/_result_.resulttype.html#error">error</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/poppa/safe-result/blob/d232251/src/result.ts#L72">result.ts:72</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="result" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> result</h3>
-					<div class="tsd-signature tsd-kind-icon">result<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">E</span></div>
+					<div class="tsd-signature tsd-kind-icon">result<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> = undefined</span></div>
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/_result_.resulttype.html">ResultType</a>.<a href="../interfaces/_result_.resulttype.html#result">result</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/result.ts#L66">src/result.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/poppa/safe-result/blob/d232251/src/result.ts#L71">result.ts:71</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -180,7 +192,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/result.ts#L83">src/result.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/d232251/src/result.ts#L89">result.ts:89</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -202,7 +214,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/result.ts#L78">src/result.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/d232251/src/result.ts#L84">result.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -228,14 +240,12 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_result_.resulttype.html">ResultType</a>.<a href="../interfaces/_result_.resulttype.html#unwrap">unwrap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/55dc1e9/src/result.ts#L73">src/result.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/poppa/safe-result/blob/d232251/src/result.ts#L79">result.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Returns a tuple with either <code>[successValue, undefined]</code> or
-										<code>[undefined, failureValue]</code> depending on whether the result is a
-									<a href="_result_.successresult.html">SuccessResult</a> or a <a href="_result_.failureresult.html">FailureResult</a></p>
+									<p>Returns a tuple with <code>[undefined, failureValue]</code></p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_types_.html#resulttuple" class="tsd-signature-type">ResultTuple</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">E</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -278,6 +288,9 @@
 								<a href="_result_.failureresult.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_result_.failureresult.html#error" class="tsd-kind-icon">error</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_result_.failureresult.html#result" class="tsd-kind-icon">result</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
@@ -293,6 +306,9 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="_result_.successandfailureresult.html" class="tsd-kind-icon">Success<wbr>And<wbr>Failure<wbr>Result</a>
+					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="_result_.successresult.html" class="tsd-kind-icon">Success<wbr>Result</a>
 					</li>
