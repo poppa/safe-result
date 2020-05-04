@@ -31,15 +31,15 @@ or only import the methods you need
 import { success, failure } from 'safe-result'
 ```
 
-- ### `function success<T>(value: T): SuccessResult<T>`
+- #### `function success<T>(value: T): SuccessResult<T>`
 
   Method for creating a successful result.
 
-- ### `function failure<T>(error: T): FailureResult<T>`
+- #### `function failure<T>(error: T): FailureResult<T>`
 
   Method for creating a failed result.
 
-- ### `type Result<T = unknown, E = Error> = SuccessResult<T> | FailureResult<E>`
+- #### `type Result<T = unknown, E = Error> = SuccessResult<T> | FailureResult<E>`
 
   Type that can be used as return type in methods returning either a
   `SuccessResult` or `FailureResult`.
@@ -52,11 +52,11 @@ import { success, failure } from 'safe-result'
   }
   ```
 
-- ### `type AsyncResult<T = unknown, E = Error> = Promise<Result<T, E>>`
+- #### `type AsyncResult<T = unknown, E = Error> = Promise<Result<T, E>>`
 
   Same as writing `Promise<Result<T, E>>`.
 
-- ### `async function all<T>(values: (T | PromiseLike<T>)[]): Promise<Result<T[]>>`
+- #### `async function all<T>(values: (T | PromiseLike<T>)[]): Promise<Result<T[]>>`
 
   Behaves like `Promise.all()` except it doesn't throw. If all values are
   resolved this promise will resolve to a `SuccessResult` where the `result`
@@ -66,13 +66,13 @@ import { success, failure } from 'safe-result'
   `FailureResult` where the `error` property is the error from the rejected
   promise.
 
-- ### `async function allSetteled<T>(values: Array<T | Promise<T>>): Promise<SuccessAndFailureResult<T[], Error[]>>`
+- #### `async function allSetteled<T>(values: Array<T | Promise<T>>): Promise<SuccessAndFailureResult<T[], Error[]>>`
 
   Just like `Promise.allSettled()` this will wait for all values to either
   resolve or reject. This will always return a `SuccessAndFailureResult`
   instance where both the `result` and `error` properties can be "truthy".
 
-- ### `interface ResultType`
+- #### `interface ResultType`
 
   Both `SuccessResult`, `FailureResult` and `SuccessAndFailureResult` implements
   this interface.
