@@ -72,6 +72,28 @@ import { success, failure } from 'safe-result'
   resolve or reject. This will always return a `SuccessAndFailureResult`
   instance where both the `result` and `error` properties can be "truthy".
 
+- ### `interface ResultType`
+
+  Both `SuccessResult`, `FailureResult` and `SuccessAndFailureResult` implements
+  this interface.
+
+  - **`ResultType.result`** Property of the successful value
+  - **`ResultType.error`** Property of the failed value
+  - **`ResultType.unwrap(): [successValue, failValue]`** Returns a tuple where
+    the first index is the successful value and the second the failed value.
+    For a `SuccessResult` this is always `[successfulValue, undefined]`, and
+    for a `FailureResult` it's always `[undefined, failedValue]`.
+
+    The `SuccessAndFailureResult` returned from `allSetteled()` will always
+    be a `[[...successfulValues], [...failedValues]]` tuple, so neither index
+    will be `undefined`, but can be an array of length `0`.
+
+  - **`ResultType.success`** If `true` it's a successful value
+  - **`ResultType.failure`** If `true` it's a failed value
+
+    For `SuccessResult` and `FailureResult` the `success` and `failure`
+    properties are mutually exclusive.
+
 ## Examples
 
 ### Single values
