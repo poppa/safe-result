@@ -5,10 +5,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-beta.0]
+
 ### Changed
 
 - Removed all the `collection` classes. The `all()` and `allSettled()` methods
   instead return `Result` implementations.
+
+### Fixed
+
+- The type inference of `all()` and `allSettled()` now seems to behave the same
+  as the native `Promise.all()` and `Promise.allSettled()`.
 
 ## [0.0.3-beta.0] - 2020-05-01
 
@@ -17,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Typeguard methods `isCollection()`, `isSuccessCollection()` and
   `isFailureCollection()`.
 - A `Collection`, `SuccessCollection` and `FailureCollection` class.
-- `allSettled()` which acts like `Promise.allSetteled()`. This will not abort
+- `allSettled()` which acts like `Promise.allSettled()`. This will not abort
   on rejections, and will return all promises resolved whether they were
   successful or not
 
