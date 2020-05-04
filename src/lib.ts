@@ -10,17 +10,9 @@ export {
   AsyncResult,
   FailureResult,
   SuccessResult,
+  SuccessAndFailureResult,
   Result,
   failure,
   success,
 } from './result'
-export {
-  Collection,
-  SuccessCollection,
-  FailureCollection,
-  all,
-  allSetteled,
-  collection,
-  failureCollection,
-  successCollection,
-} from './collection'
+export { all, allSetteled } from './collection'

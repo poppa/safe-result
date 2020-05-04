@@ -48,3 +48,10 @@ export function toFailure<T extends FailureResult | unknown>(
 ): FailureResult<ValueType<T>> {
   return (isFailure(e) ? e : failure(e)) as FailureResult<ValueType<T>>
 }
+
+/**
+ * @internal
+ */
+export function isUndefinedOrNull(o: unknown): o is undefined | null {
+  return typeof o === 'undefined' || o === null
+}
