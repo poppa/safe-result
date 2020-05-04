@@ -3,11 +3,15 @@
  * @packageDocumentation
  */
 
-import { Result, SuccessResult, FailureResult } from './result'
+import {
+  Result,
+  SuccessResult,
+  FailureResult,
+  SuccessAndFailureResult,
+} from './result'
 
 /**
  * Check if `o` is a [[Result]]
- * @param o
  */
 export function isResult(o: unknown): o is Result {
   return (
@@ -18,7 +22,6 @@ export function isResult(o: unknown): o is Result {
 
 /**
  * Check if `o` is a [[SuccessResult]]
- * @param o
  */
 export function isSuccess(o: unknown): o is SuccessResult {
   return typeof o === 'object' && o instanceof SuccessResult
@@ -26,8 +29,16 @@ export function isSuccess(o: unknown): o is SuccessResult {
 
 /**
  * Check if `o` is a [[FailureResult]]
- * @param o
  */
 export function isFailure(o: unknown): o is FailureResult {
   return typeof o === 'object' && o instanceof FailureResult
+}
+
+/**
+ * Check is `o` is a [[SuccessAndFailureResult]]
+ */
+export function isSuccessAndFailure(
+  o: unknown
+): o is SuccessAndFailureResult<unknown> {
+  return typeof o === 'object' && o instanceof SuccessAndFailureResult
 }
