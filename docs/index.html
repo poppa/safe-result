@@ -201,8 +201,22 @@
   <span class="hljs-keyword">return</span>
 }
 
-<span class="hljs-comment">// Safe to index result here</span>
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Name:`</span>, result.name)</code></pre>
+<span class="hljs-comment">// See https://github.com/poppa/safe-result/issues/3</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Unfortunately it isn't safe to index `result` here according to Typescript.</span>
+<span class="hljs-comment">// One would assume that we can be pretty sure that `result` is not undefined</span>
+<span class="hljs-comment">// here, but I haven't figured out yet how to make TS acknowledge that the</span>
+<span class="hljs-comment">// result and error values are mutually exclusive.</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Name:`</span>, result.name)
+
+<span class="hljs-comment">// Either resort to optional chaining</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Name:`</span>, result?.name)
+
+<span class="hljs-comment">// Or an if-statement (which one of the intentions of this lib is to not to</span>
+<span class="hljs-comment">// have to do)</span>
+<span class="hljs-keyword">if</span> (result) {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Name:`</span>, result.name)
+}</code></pre>
 				<a href="#async-collections" id="async-collections" style="color: inherit; text-decoration: none;">
 					<h3>Async collections</h3>
 				</a>
