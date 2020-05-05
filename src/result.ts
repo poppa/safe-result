@@ -1,5 +1,5 @@
-import { ResultTuple } from './types'
 import { isUndefinedOrNull } from './internal'
+
 /**
  * A result that is either a [[`SuccessResult`]] or [[`FailureResult`]]
  * @typeParam T - Type of successful result
@@ -18,17 +18,17 @@ export type AsyncResult<T = unknown, E = Error> = Promise<Result<T, E>>
 /**
  * Result interface
  */
-export interface ResultType {
+export interface ResultType<T, E> {
   /** The value */
-  readonly result: unknown
+  readonly result: T
 
   /** The error */
-  readonly error: unknown
+  readonly error: E
 
   /**
    * Returns a tuple with `[successValue, failureValue]`
    */
-  unwrap(): ResultTuple<unknown, unknown>
+  unwrap(): unknown
 
   /** Returns `true` if a success result, `false` otherwise` */
   success: boolean
@@ -40,16 +40,23 @@ export interface ResultType {
 /**
  * A class representing a successful result
  */
-export class SuccessResult<T = unknown> implements ResultType {
-  public readonly result: T
-  public readonly error = undefined
+export class SuccessResult<T = unknown> implements ResultType<T, undefined> {
+  private _res: T
 
   constructor(data: T) {
-    this.result = data
+    this._res = data
+  }
+
+  public get result(): T {
+    return this._res
+  }
+
+  public get error(): undefined {
+    return undefined
   }
 
   /** Returns a tuple with `[successValue, undefined]` */
-  public unwrap(): ResultTuple<T, undefined> {
+  public unwrap(): [T, undefined] {
     return [this.result, undefined]
   }
 
@@ -67,16 +74,23 @@ export class SuccessResult<T = unknown> implements ResultType {
 /**
  * A class representing an error result
  */
-export class FailureResult<E = Error> implements ResultType {
-  public readonly result = undefined
-  public readonly error: E
+export class FailureResult<E = Error> implements ResultType<undefined, E> {
+  private _res: E
 
   constructor(error: E) {
-    this.error = error
+    this._res = error
+  }
+
+  public get result(): undefined {
+    return undefined
+  }
+
+  public get error(): E {
+    return this._res
   }
 
   /** Returns a tuple with `[undefined, failureValue]` */
-  public unwrap(): ResultTuple<undefined, E> {
+  public unwrap(): [undefined, E] {
     return [undefined, this.error]
   }
 
@@ -95,32 +109,40 @@ export class FailureResult<E = Error> implements ResultType {
  * Class representing a result that can both have successful and failed
  * values. This is only used internally by and returned from [[allSettled]]
  */
-export class SuccessAndFailureResult<T, E = Error> implements ResultType {
-  public readonly result: T
-  public readonly error: E
+export class SuccessAndFailureResult<T, E = Error> implements ResultType<T, E> {
+  private _res: T
+  private _err: E
 
   constructor(res: T, err: E) {
-    this.result = res
-    this.error = err
+    this._res = res
+    this._err = err
   }
 
-  public unwrap(): ResultTuple<T, E> {
-    return [this.result, this.error]
+  public get result(): T {
+    return this._res
+  }
+
+  public get error(): E {
+    return this._err
+  }
+
+  public unwrap(): [T, E] {
+    return [this._res, this._err]
   }
 
   public get success(): boolean {
-    return isUndefinedOrNull(this.result)
+    return isUndefinedOrNull(this._res)
       ? false
-      : Array.isArray(this.result)
-      ? this.result.length > 0
+      : Array.isArray(this._res)
+      ? this._res.length > 0
       : true
   }
 
   public get failure(): boolean {
-    return isUndefinedOrNull(this.error)
+    return isUndefinedOrNull(this._err)
       ? false
-      : Array.isArray(this.error)
-      ? this.error.length > 0
+      : Array.isArray(this._err)
+      ? this._err.length > 0
       : true
   }
 }
