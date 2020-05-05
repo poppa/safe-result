@@ -134,8 +134,22 @@ if (error) {
   return
 }
 
-// Safe to index result here
+// See https://github.com/poppa/safe-result/issues/3
+//
+// Unfortunately it isn't safe to index `result` here according to Typescript.
+// One would assume that we can be pretty sure that `result` is not undefined
+// here, but I haven't figured out yet how to make TS acknowledge that the
+// result and error values are mutually exclusive.
 console.log(`Name:`, result.name)
+
+// Either resort to optional chaining
+console.log(`Name:`, result?.name)
+
+// Or an if-statement (which one of the intentions of this lib is to not to
+// have to do)
+if (result) {
+  console.log(`Name:`, result.name)
+}
 ```
 
 ### Async collections
