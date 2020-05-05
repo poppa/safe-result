@@ -5,6 +5,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0-beta.2]
+
+### Changed
+
+- Converted the `result` and `error` properties to getters
+  This improved type inference of the `result` property
+
 ## [1.0.0-beta.1]
 
 ### Changed
