@@ -69,6 +69,8 @@ describe('Sync Result tests', () => {
     expect(r2.success).toBeFalsy()
   })
 
+  // FIXME: This isn't testing what we think it is testing.
+  // See https://github.com/poppa/safe-result/issues/3
   test('Typeguard for Result.unwrap() should be ok', () => {
     const [ok, err] = success({ value: 1 }).unwrap()
 
