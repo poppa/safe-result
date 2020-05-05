@@ -19,6 +19,8 @@ Javascript, so you will have to use `try / catch` in your own "low-level" code.
 
 ## API
 
+**[Full API documentation](https://poppa.github.io/safe-result/)**
+
 You can either import the module via the default import
 
 ```ts
