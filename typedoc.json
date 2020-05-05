@@ -1,0 +1,6 @@
+{
+  "stripInternal": true,
+  "excludeExternals": true,
+  "disableSources": true,
+  "out": "docs/"
+}

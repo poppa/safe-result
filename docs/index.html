@@ -88,19 +88,19 @@
 				<ul>
 					<li>
 						<a href="#function-successlttgtvalue-t-successresultlttgt" id="function-successlttgtvalue-t-successresultlttgt" style="color: inherit; text-decoration: none;">
-							<h3><code>function success&lt;T&gt;(value: T): SuccessResult&lt;T&gt;</code></h3>
+							<h4><code>function success&lt;T&gt;(value: T): SuccessResult&lt;T&gt;</code></h4>
 						</a>
 						<p>Method for creating a successful result.</p>
 					</li>
 					<li>
 						<a href="#function-failurelttgterror-t-failureresultlttgt" id="function-failurelttgterror-t-failureresultlttgt" style="color: inherit; text-decoration: none;">
-							<h3><code>function failure&lt;T&gt;(error: T): FailureResult&lt;T&gt;</code></h3>
+							<h4><code>function failure&lt;T&gt;(error: T): FailureResult&lt;T&gt;</code></h4>
 						</a>
 						<p>Method for creating a failed result.</p>
 					</li>
 					<li>
 						<a href="#type-resultltt--unknown-e--errorgt--successresultlttgt--failureresultltegt" id="type-resultltt--unknown-e--errorgt--successresultlttgt--failureresultltegt" style="color: inherit; text-decoration: none;">
-							<h3><code>type Result&lt;T = unknown, E = Error&gt; = SuccessResult&lt;T&gt; | FailureResult&lt;E&gt;</code></h3>
+							<h4><code>type Result&lt;T = unknown, E = Error&gt; = SuccessResult&lt;T&gt; | FailureResult&lt;E&gt;</code></h4>
 						</a>
 						<p>Type that can be used as return type in methods returning either a
 						<code>SuccessResult</code> or <code>FailureResult</code>.</p>
@@ -112,13 +112,13 @@
 					</li>
 					<li>
 						<a href="#type-asyncresultltt--unknown-e--errorgt--promiseltresultltt-egtgt" id="type-asyncresultltt--unknown-e--errorgt--promiseltresultltt-egtgt" style="color: inherit; text-decoration: none;">
-							<h3><code>type AsyncResult&lt;T = unknown, E = Error&gt; = Promise&lt;Result&lt;T, E&gt;&gt;</code></h3>
+							<h4><code>type AsyncResult&lt;T = unknown, E = Error&gt; = Promise&lt;Result&lt;T, E&gt;&gt;</code></h4>
 						</a>
 						<p>Same as writing <code>Promise&lt;Result&lt;T, E&gt;&gt;</code>.</p>
 					</li>
 					<li>
 						<a href="#async-function-alllttgtvalues-t--promiselikelttgt-promiseltresultlttgtgt" id="async-function-alllttgtvalues-t--promiselikelttgt-promiseltresultlttgtgt" style="color: inherit; text-decoration: none;">
-							<h3><code>async function all&lt;T&gt;(values: (T | PromiseLike&lt;T&gt;)[]): Promise&lt;Result&lt;T[]&gt;&gt;</code></h3>
+							<h4><code>async function all&lt;T&gt;(values: (T | PromiseLike&lt;T&gt;)[]): Promise&lt;Result&lt;T[]&gt;&gt;</code></h4>
 						</a>
 						<p>Behaves like <code>Promise.all()</code> except it doesn&#39;t throw. If all values are
 							resolved this promise will resolve to a <code>SuccessResult</code> where the <code>result</code>
@@ -129,7 +129,7 @@
 					</li>
 					<li>
 						<a href="#async-function-allsetteledlttgtvalues-arrayltt--promiselttgtgt-promiseltsuccessandfailureresultltt-errorgtgt" id="async-function-allsetteledlttgtvalues-arrayltt--promiselttgtgt-promiseltsuccessandfailureresultltt-errorgtgt" style="color: inherit; text-decoration: none;">
-							<h3><code>async function allSetteled&lt;T&gt;(values: Array&lt;T | Promise&lt;T&gt;&gt;): Promise&lt;SuccessAndFailureResult&lt;T[], Error[]&gt;&gt;</code></h3>
+							<h4><code>async function allSetteled&lt;T&gt;(values: Array&lt;T | Promise&lt;T&gt;&gt;): Promise&lt;SuccessAndFailureResult&lt;T[], Error[]&gt;&gt;</code></h4>
 						</a>
 						<p>Just like <code>Promise.allSettled()</code> this will wait for all values to either
 							resolve or reject. This will always return a <code>SuccessAndFailureResult</code>
@@ -137,7 +137,7 @@
 					</li>
 					<li>
 						<a href="#interface-resulttype" id="interface-resulttype" style="color: inherit; text-decoration: none;">
-							<h3><code>interface ResultType</code></h3>
+							<h4><code>interface ResultType</code></h4>
 						</a>
 						<p>Both <code>SuccessResult</code>, <code>FailureResult</code> and <code>SuccessAndFailureResult</code> implements
 						this interface.</p>

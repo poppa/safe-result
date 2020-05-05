@@ -33,7 +33,7 @@
     "clean:all": "rimraf lib && rimraf node_modules",
     "test": "./node_modules/.bin/jest",
     "lint": "yarn eslint src/**/*.ts --quiet",
-    "docgen": "yarn typedoc --stripInternal --excludeExternals --out docs/ src/"
+    "docgen": "yarn typedoc src/ && touch docs/.nojekyll"
   },
   "husky": {
     "hooks": {
