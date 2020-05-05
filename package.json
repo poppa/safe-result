@@ -1,7 +1,7 @@
 {
   "name": "safe-result",
   "description": "Create safe results that are either successes or failures",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "main": "lib/index.js",
   "repository": "https://github.com/poppa/safe-result.git",
   "author": "Pontus Östlund <poppanator@gmail.com>",
