@@ -5,6 +5,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2020-05-15
+
+### Changed
+
+- Declare return type as tuple in result type interface
+- Compile to ES2019
+
 ## [1.0.0-beta.2]
 
 ### Changed
