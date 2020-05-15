@@ -1,6 +1,14 @@
 {
   "name": "safe-result",
   "description": "Create safe results that are either successes or failures",
+  "keywords": [
+    "typescript",
+    "type-safety",
+    "error-handling",
+    "promise",
+    "UnhandledPromiseRejectionWarning",
+    "safe-return"
+  ],
   "version": "1.0.0",
   "main": "lib/index.js",
   "repository": "https://github.com/poppa/safe-result.git",
