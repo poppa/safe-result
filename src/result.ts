@@ -28,7 +28,7 @@ export interface ResultType<T, E> {
   /**
    * Returns a tuple with `[successValue, failureValue]`
    */
-  unwrap(): unknown
+  unwrap(): [T, E]
 
   /** Returns `true` if a success result, `false` otherwise` */
   success: boolean

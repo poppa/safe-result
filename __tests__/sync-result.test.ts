@@ -1,6 +1,12 @@
 import 'jest'
 
-import { success, failure, SuccessResult, FailureResult } from '../src/result'
+import {
+  success,
+  failure,
+  SuccessResult,
+  FailureResult,
+  Result,
+} from '../src/result'
 
 describe('Sync Result tests', () => {
   test('success() should return an instance of SuccessResult', () => {
@@ -82,5 +88,18 @@ describe('Sync Result tests', () => {
     // fail() has return type `never`. So if `err` is defined we this should
     // be unreachable
     expect(ok.value).toEqual(1)
+
+    function gimmeValue<T>(value: T): Result<T> {
+      return success(value)
+    }
+
+    const [res, e2] = gimmeValue({ key: 'one' }).unwrap()
+
+    if (e2) {
+      throw e2
+    }
+
+    // We want to get rid of the null coalescing here
+    expect(res?.key).toEqual('one')
   })
 })
