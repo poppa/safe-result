@@ -176,7 +176,7 @@
 				<code>failure(Error)</code> respectively.</p>
 				<pre><code class="language-ts"><span class="hljs-keyword">import</span> Result <span class="hljs-keyword">from</span> <span class="hljs-string">'safe-result'</span>
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unsafeMethod</span>(<span class="hljs-params"></span>): <span class="hljs-title">Result</span>&lt;</span>{ name: <span class="hljs-built_in">string</span>; age: <span class="hljs-built_in">number</span> }&gt; {
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unsafeMethod</span>(<span class="hljs-params"></span>): <span class="hljs-title">Result</span>.<span class="hljs-title">Result</span>&lt;</span>{ name: <span class="hljs-built_in">string</span>; age: <span class="hljs-built_in">number</span> }&gt; {
   <span class="hljs-keyword">try</span> {
     <span class="hljs-keyword">return</span> Result.success(callToMethodThatMightThrow())
   } <span class="hljs-keyword">catch</span> (e) {

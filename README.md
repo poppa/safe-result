@@ -109,7 +109,7 @@ Instances of these classes can be created by calling `success(okValue)` and
 ```ts
 import Result from 'safe-result'
 
-function unsafeMethod(): Result<{ name: string; age: number }> {
+function unsafeMethod(): Result.Result<{ name: string; age: number }> {
   try {
     return Result.success(callToMethodThatMightThrow())
   } catch (e) {
