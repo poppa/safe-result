@@ -11,27 +11,10 @@ import { isPromise, isError, toSuccess, toFailure } from './internal'
 import { isResult, isFailure, isSuccess } from './typeguards'
 import { ValueType } from './types'
 
-// Overload signatures must all be ambient or non-ambient.ts(2384)
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-declare function guard<T>(
-  res: readonly (T | PromiseLike<T>)[],
-  noThrow: true
-): Promise<SuccessAndFailureResult<Array<ValueType<T>>, Array<Error>>>
-
-// Overload signatures must all be ambient or non-ambient.ts(2384)
-// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
-// @ts-ignore
-declare function guard<T>(
-  res: readonly (T | PromiseLike<T>)[],
-  noThrow: false
-): Promise<SuccessResult<Array<ValueType<T>>> | FailureResult>
-
 /**
  * @internal
  */
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-async function guard(res: unknown[], noThrow: boolean) {
+async function guard(res: unknown[], noThrow: boolean): Promise<unknown> {
   try {
     const x: AsyncResult[] = res.map((r) => {
       if (isPromise(r)) {
@@ -113,7 +96,9 @@ async function guard(res: unknown[], noThrow: boolean) {
 export async function allSettled<T>(
   values: Array<T | Promise<T>>
 ): Promise<SuccessAndFailureResult<ValueType<T>[], Error[]>> {
-  return guard(values, true)
+  return guard(values, true) as Promise<
+    SuccessAndFailureResult<ValueType<T>[], Error[]>
+  >
 }
 
 /**
@@ -157,5 +142,7 @@ export async function allSettled<T>(
 export async function all<T>(
   values: (T | PromiseLike<T>)[]
 ): Promise<SuccessResult<ValueType<T>[]> | FailureResult> {
-  return guard(values, false)
+  return guard(values, false) as Promise<
+    SuccessResult<ValueType<T>[]> | FailureResult
+  >
 }

@@ -19,7 +19,7 @@ function gimmeAsync<T, A extends boolean>(
     setTimeout(
       // I have no friggin idea why this is complained about.
       // VSCode resolves it properly when this method is called
-      // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       () => resolve(asResult ? success(v) : v),
       time
