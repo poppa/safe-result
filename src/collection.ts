@@ -50,9 +50,9 @@ async function guard(res: unknown[], noThrow: boolean): Promise<unknown> {
     } else {
       return new SuccessResult(resolved.map((s) => s.result))
     }
-  } catch (e) {
-    e = isFailure(e) ? e : failure(e)
-    return new FailureResult(e.error)
+  } catch (e: unknown) {
+    const fr = isFailure(e) ? e : failure(e)
+    return new FailureResult(fr.error)
   }
 }
 

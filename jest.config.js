@@ -18,8 +18,8 @@ module.exports = {
   preset: 'ts-jest',
   globals: {
     'ts-jest': {
+      tsconfig: resolve('./tsconfig.test.json'),
       packageJson: resolve('./package.json'),
-      tsConfig: resolve('./tsconfig.test.json'),
       diagnostics: true,
     },
   },
