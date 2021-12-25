@@ -3,12 +3,8 @@
  * @packageDocumentation
  */
 
-import {
-  Result,
-  SuccessResult,
-  FailureResult,
-  SuccessAndFailureResult,
-} from './result'
+import { FailureResult, SuccessAndFailureResult, SuccessResult } from './result'
+import type { Result } from './result'
 
 /**
  * Check if `o` is a [[Result]]

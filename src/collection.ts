@@ -1,15 +1,14 @@
+import type { AsyncResult, Result } from './result'
 import {
-  Result,
-  success,
-  failure,
-  AsyncResult,
-  SuccessResult,
   FailureResult,
   SuccessAndFailureResult,
+  SuccessResult,
+  failure,
+  success,
 } from './result'
-import { isPromise, isError, toSuccess, toFailure } from './internal'
-import { isResult, isFailure, isSuccess } from './typeguards'
-import { ValueType } from './types'
+import { isError, isPromise, toFailure, toSuccess } from './internal'
+import { isFailure, isResult, isSuccess } from './typeguards'
+import type { ValueType } from './types'
 
 /**
  * @internal
@@ -19,7 +18,7 @@ async function guard(res: unknown[], noThrow: boolean): Promise<unknown> {
     const x: AsyncResult[] = res.map((r) => {
       if (isPromise(r)) {
         return new Promise((resolve, reject) => {
-          r.then((res) => resolve(toSuccess(res))).catch((e) =>
+          r.then((rres) => resolve(toSuccess(rres))).catch((e) =>
             noThrow ? resolve(toFailure(e)) : reject(toFailure(e))
           )
         })

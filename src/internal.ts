@@ -4,9 +4,8 @@
  * Internal module
  */
 
-import { ValueType } from './types'
-import { isResult, isSuccess, isFailure } from './typeguards'
-import { SuccessResult, success, FailureResult, failure } from './result'
+import type { FailureResult, SuccessResult, ValueType } from './lib'
+import { failure, isFailure, isResult, isSuccess, success } from './lib'
 
 /**
  * @internal

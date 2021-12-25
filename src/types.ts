@@ -3,7 +3,7 @@
  * @packageDocumentation
  */
 
-import { Result } from './result'
+import type { Result } from './result'
 
 /**
  * A result tuple with two indices where the first index is a success result

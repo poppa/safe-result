@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import 'jest'
 import {
-  success,
-  SuccessResult,
-  failure,
   FailureResult,
   SuccessAndFailureResult,
+  SuccessResult,
+  failure,
+  success,
 } from '../src/result'
 import { all, allSettled } from '../src/collection'
 

@@ -9,9 +9,13 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-    // "@typescript-eslint/explicit-function-return-type": "off",
-    // "eslint/prettier/prettier)"
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
+    '@typescript-eslint/consistent-indexed-object-style': 'error',
+    'comma-spacing': 'off',
+    '@typescript-eslint/comma-spacing': ['error'],
+    '@typescript-eslint/consistent-type-imports': ['error'],
+    'sort-imports': 1,
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',

@@ -1,12 +1,7 @@
 import 'jest'
 
-import {
-  success,
-  failure,
-  SuccessResult,
-  FailureResult,
-  Result,
-} from '../src/result'
+import { FailureResult, SuccessResult, failure, success } from '../src/result'
+import type { Result } from '../src/result'
 
 describe('Sync Result tests', () => {
   test('success() should return an instance of SuccessResult', () => {

@@ -1,18 +1,20 @@
 import 'jest'
 
-import Result, {
-  success,
-  failure,
-  FailureResult,
-  SuccessResult,
+import type {
   AsyncResult,
-  Result as TResult,
+  FailureResult,
   ResultTuple,
+  SuccessResult,
+  Result as TResult,
+} from '../src'
+import Result, {
   all,
   allSettled,
+  failure,
   isFailure,
   isResult,
   isSuccess,
+  success,
 } from '../src'
 
 function s(): SuccessResult<number> {
@@ -58,7 +60,7 @@ describe('export should do what it should do', () => {
   })
 
   test('all() on default import', async () => {
-    const all = await Result.all([s(), s()])
-    expect(all.success).toEqual(true)
+    const a = await Result.all([s(), s()])
+    expect(a.success).toEqual(true)
   })
 })

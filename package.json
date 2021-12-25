@@ -37,7 +37,7 @@
     "build": "yarn clean && tsc && yarn lint && yarn test",
     "clean": "rimraf lib",
     "clean:all": "rimraf lib && rimraf node_modules",
-    "test": "./node_modules/.bin/jest",
+    "test": "jest",
     "lint": "yarn eslint src/**/*.ts --quiet",
     "docgen": "yarn typedoc src/ && touch docs/.nojekyll"
   },
