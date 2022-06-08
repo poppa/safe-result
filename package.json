@@ -9,7 +9,7 @@
     "UnhandledPromiseRejectionWarning",
     "safe-return"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "lib/index.js",
   "repository": "https://github.com/poppa/safe-result.git",
   "author": "Pontus Östlund <poppanator@gmail.com>",
