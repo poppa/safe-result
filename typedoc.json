@@ -1,5 +1,5 @@
 {
-  "stripInternal": true,
+  "excludeInternal": true,
   "excludeExternals": true,
   "disableSources": true,
   "out": "docs/"
