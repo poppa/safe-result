@@ -5,6 +5,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.2] - 2022-06-08
+
+### Changed
+
+- Updated README and upgraded NPM dependencies
+
 ## [1.0.1] - 2020-07-02
 
 ### Changed
